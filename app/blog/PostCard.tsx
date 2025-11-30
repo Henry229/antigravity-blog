@@ -5,7 +5,7 @@ interface PostCardProps {
   title: string;
   slug: string;
   excerpt: string;
-  publishedAt: Date;
+  publishedAt: Date | null;
   readTime?: number;
 }
 
@@ -29,7 +29,7 @@ export function PostCard({
           {excerpt}
         </p>
         <p className="text-sm text-gray-500 dark:text-gray-400">
-          {formatDate(publishedAt)} · {readTime} min read
+          {formatDate(publishedAt)}{publishedAt && ' · '}{readTime} min read
         </p>
       </div>
     </article>

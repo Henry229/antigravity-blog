@@ -33,7 +33,7 @@ export function PostList({ posts }: PostListProps) {
           title={post.title}
           slug={post.slug}
           excerpt={post.excerpt || post.content.slice(0, 150) + "..."}
-          publishedAt={post.published_at || new Date()}
+          publishedAt={post.published_at}
           readTime={calculateReadTime(post.content)}
         />
       ))}

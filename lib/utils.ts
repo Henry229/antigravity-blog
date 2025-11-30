@@ -12,12 +12,28 @@ export function cn(...inputs: ClassValue[]) {
  * Format a date to a readable string
  * @example formatDate(new Date()) // "November 30, 2025"
  */
-export function formatDate(date: Date | string): string {
-  return new Intl.DateTimeFormat('en-US', {
-    month: 'long',
-    day: 'numeric',
-    year: 'numeric'
-  }).format(new Date(date))
+export function formatDate(
+  date: Date | string | null | undefined,
+  locale: string = 'en-US'
+): string {
+  if (!date) {
+    return ''
+  }
+
+  try {
+    const parsedDate = new Date(date)
+    if (isNaN(parsedDate.getTime())) {
+      return ''
+    }
+
+    return new Intl.DateTimeFormat(locale, {
+      month: 'long',
+      day: 'numeric',
+      year: 'numeric'
+    }).format(parsedDate)
+  } catch {
+    return ''
+  }
 }
 
 /**
@@ -26,7 +42,10 @@ export function formatDate(date: Date | string): string {
  * @param wordsPerMinute - Average reading speed (default: 200)
  * @returns Estimated minutes to read
  */
-export function calculateReadTime(content: string, wordsPerMinute = 200): number {
-  const words = content.trim().split(/\s+/).length
+export function calculateReadTime(content: string | null | undefined, wordsPerMinute = 200): number {
+  if (!content) {
+    return 1
+  }
+  const words = content.trim().split(/\s+/).filter(Boolean).length
   return Math.max(1, Math.ceil(words / wordsPerMinute))
 }

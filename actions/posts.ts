@@ -1,5 +1,3 @@
-"use server"
-
 export interface Post {
   id: string;
   user_id: string;
