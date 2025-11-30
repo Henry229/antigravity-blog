@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SimpleBlog - Blog List Page</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#2563EB",
+            "background-light": "#FFFFFF",
+            "background-dark": "#111c21",
+          },
+          fontFamily: {
+            "display": ["Newsreader", "sans-serif"]
+          },
+          borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-[#1F2937] dark:text-gray-300">
+<div class="relative flex min-h-screen w-full flex-col">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-10 w-full border-b border-gray-200/50 dark:border-gray-800/50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
+<div class="mx-auto flex h-16 max-w-5xl items-center justify-between px-4 sm:px-6 lg:px-8">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-2xl">
+            article
+          </span>
+<a class="text-lg font-bold text-[#1F2937] dark:text-gray-100" href="#">SimpleBlog</a>
+</div>
+<nav class="flex items-center gap-6 text-sm font-medium">
+<a class="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary" href="#">Home</a>
+<a class="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary" href="#">Login</a>
+</nav>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow">
+<div class="mx-auto max-w-[720px] px-4 py-8 sm:px-6 lg:px-8">
+<!-- HeadlineText -->
+<h1 class="text-4xl font-bold tracking-tight text-[#1F2937] dark:text-gray-100 mb-12">Latest Posts</h1>
+<!-- Blog Post Cards Container -->
+<div class="flex flex-col gap-6">
+<!-- Card 1 -->
+<div class="rounded-lg border border-gray-200/80 bg-white p-6 shadow-sm dark:border-gray-800/50 dark:bg-background-dark">
+<div class="flex flex-col gap-2">
+<a class="text-2xl font-bold text-primary hover:underline" href="#">The Art of Minimalist Design</a>
+<p class="text-base leading-relaxed text-[#1F2937] dark:text-gray-300">Discover how less can be more. In this post, we explore the core principles of minimalist design and how you can apply them to create clean, beautiful, and functional interfaces.</p>
+<p class="text-sm text-[#64748B] dark:text-gray-500">October 26, 2023 · 5 min read</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="rounded-lg border border-gray-200/80 bg-white p-6 shadow-sm dark:border-gray-800/50 dark:bg-background-dark">
+<div class="flex flex-col gap-2">
+<a class="text-2xl font-bold text-primary hover:underline" href="#">A Deep Dive into Modern Typography</a>
+<p class="text-base leading-relaxed text-[#1F2937] dark:text-gray-300">Typography is the cornerstone of good design. We'll take a look at the latest trends in web typography, from variable fonts to accessible text, to help you make your content shine.</p>
+<p class="text-sm text-[#64748B] dark:text-gray-500">October 22, 2023 · 7 min read</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="rounded-lg border border-gray-200/80 bg-white p-6 shadow-sm dark:border-gray-800/50 dark:bg-background-dark">
+<div class="flex flex-col gap-2">
+<a class="text-2xl font-bold text-primary hover:underline" href="#">Crafting the Perfect User Experience</a>
+<p class="text-base leading-relaxed text-[#1F2937] dark:text-gray-300">User experience is more than just a buzzword. This guide will walk you through the essential steps of UX design, from user research to prototyping and testing.</p>
+<p class="text-sm text-[#64748B] dark:text-gray-500">October 19, 2023 · 8 min read</p>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="rounded-lg border border-gray-200/80 bg-white p-6 shadow-sm dark:border-gray-800/50 dark:bg-background-dark">
+<div class="flex flex-col gap-2">
+<a class="text-2xl font-bold text-primary hover:underline" href="#">The Power of White Space in UI Design</a>
+<p class="text-base leading-relaxed text-[#1F2937] dark:text-gray-300">Learn how strategic use of negative space can improve readability, focus, and the overall aesthetic of your designs, creating a more pleasant user journey.</p>
+<p class="text-sm text-[#64748B] dark:text-gray-500">October 15, 2023 · 6 min read</p>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="rounded-lg border border-gray-200/80 bg-white p-6 shadow-sm dark:border-gray-800/50 dark:bg-background-dark">
+<div class="flex flex-col gap-2">
+<a class="text-2xl font-bold text-primary hover:underline" href="#">Color Theory for Digital Designers</a>
+<p class="text-base leading-relaxed text-[#1F2937] dark:text-gray-300">Explore how color psychology and practical application of color theory can elevate your interfaces, evoke emotion, and guide user actions effectively.</p>
+<p class="text-sm text-[#64748B] dark:text-gray-500">October 11, 2023 · 9 min read</p>
+</div>
+</div>
+</div>
+<!-- Load More Button -->
+<div class="mt-12 flex justify-center">
+<button class="rounded-lg bg-primary px-6 py-2.5 text-base font-medium text-white shadow-sm hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-background-dark">Load More</button>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="mt-auto w-full border-t border-gray-200/80 dark:border-gray-800/50">
+<div class="mx-auto flex max-w-5xl flex-col items-center justify-between gap-4 px-4 py-8 sm:flex-row sm:px-6 lg:px-8">
+<p class="text-sm text-[#64748B] dark:text-gray-500">© 2024 SimpleBlog. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="text-sm text-[#64748B] hover:text-primary dark:text-gray-500 dark:hover:text-primary" href="#">About</a>
+<a class="text-sm text-[#64748B] hover:text-primary dark:text-gray-500 dark:hover:text-primary" href="#">Contact</a>
+<a class="text-sm text-[#64748B] hover:text-primary dark:text-gray-500 dark:hover:text-primary" href="#">Privacy Policy</a>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

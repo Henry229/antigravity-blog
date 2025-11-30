@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SimpleBlog Landing Page</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24
+    }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#2463eb",
+            "background-light": "#f6f6f8",
+            "background-dark": "#111621",
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-200">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col w-full max-w-5xl flex-1 px-4 sm:px-6 lg:px-8">
+<!-- TopNavBar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 dark:border-gray-700 px-4 sm:px-6 py-4">
+<div class="flex items-center gap-2 text-gray-900 dark:text-white">
+<span class="material-symbols-outlined text-primary text-2xl">edit</span>
+<h2 class="text-xl font-bold">SimpleBlog</h2>
+</div>
+<div class="flex flex-1 justify-end gap-2">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-transparent text-gray-800 dark:text-gray-200 dark:hover:bg-gray-800 hover:bg-gray-100 text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Login</span>
+</button>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Sign Up</span>
+</button>
+</div>
+</header>
+<!-- HeroSection -->
+<main class="flex-grow">
+<div class="py-20 sm:py-28 text-center">
+<div class="flex flex-col gap-6 px-4">
+<div class="flex flex-col gap-4 text-center items-center">
+<h1 class="text-gray-900 dark:text-white text-5xl font-black leading-tight tracking-tighter sm:text-6xl max-w-2xl">
+                    Write. Publish. Share.
+                  </h1>
+<h2 class="text-gray-600 dark:text-gray-400 text-lg font-normal leading-normal max-w-xl">
+                    Minimal Markdown blogging for developers. Everything you need to start your developer blog, and nothing you don't.
+                  </h2>
+</div>
+<div class="flex-wrap gap-4 flex items-center justify-center">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Get Started</span>
+</button>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-transparent border border-gray-300 dark:border-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 text-base font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Read Blog</span>
+</button>
+</div>
+</div>
+</div>
+<!-- FeatureSection -->
+<div class="flex flex-col gap-10 px-4 py-16 sm:py-20">
+<div class="flex flex-col gap-4 text-center items-center">
+<h1 class="text-gray-900 dark:text-white tracking-tight text-3xl font-bold leading-tight sm:text-4xl max-w-2xl">
+                  Why SimpleBlog?
+                </h1>
+<p class="text-gray-600 dark:text-gray-400 text-base font-normal leading-normal max-w-2xl">Focus on what matters most: your content. We handle the rest, from a beautiful writing experience to instant publishing.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-0">
+<div class="flex flex-1 gap-4 rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-background-dark p-6 flex-col">
+<div class="text-primary">
+<span class="material-symbols-outlined text-3xl">draw</span>
+</div>
+<div class="flex flex-col gap-1">
+<h2 class="text-gray-900 dark:text-white text-lg font-bold leading-tight">Markdown Editor</h2>
+<p class="text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal">
+                      A clean, intuitive writing environment that gets out of your way and lets you focus on your content.
+                    </p>
+</div>
+</div>
+<div class="flex flex-1 gap-4 rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-background-dark p-6 flex-col">
+<div class="text-primary">
+<span class="material-symbols-outlined text-3xl">rocket_launch</span>
+</div>
+<div class="flex flex-col gap-1">
+<h2 class="text-gray-900 dark:text-white text-lg font-bold leading-tight">Instant Publish</h2>
+<p class="text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal">Go from draft to live in seconds. Share your ideas with the world without any friction.</p>
+</div>
+</div>
+<div class="flex flex-1 gap-4 rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-background-dark p-6 flex-col">
+<div class="text-primary">
+<span class="material-symbols-outlined text-3xl">lock</span>
+</div>
+<div class="flex flex-col gap-1">
+<h2 class="text-gray-900 dark:text-white text-lg font-bold leading-tight">Own Your Content</h2>
+<p class="text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal">You have full control over your data. Export your content anytime, no questions asked.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="flex flex-col gap-6 px-5 py-10 text-center border-t border-gray-200 dark:border-gray-800">
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">© 2024 SimpleBlog. All rights reserved.</p>
+</footer>
+</div>
+</div>
+</div>
+</div>
+</body></html>

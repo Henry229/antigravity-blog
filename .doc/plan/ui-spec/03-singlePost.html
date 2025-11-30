@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SimpleBlog - Single Post Page</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#2563EB",
+                "background-light": "#FFFFFF",
+                "background-dark": "#0A0E12",
+              },
+              fontFamily: {
+                "display": ["Newsreader", "serif"],
+                "sans": ["Inter", "sans-serif"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+</head>
+<body class="font-sans bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-300">
+<div class="relative flex min-h-screen w-full flex-col">
+<header class="sticky top-0 z-10 w-full border-b border-gray-200/50 dark:border-gray-800/50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
+<div class="mx-auto flex h-16 max-w-5xl items-center justify-between px-4 sm:px-6 lg:px-8">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-2xl">article</span>
+<a class="text-lg font-bold text-[#1F2937] dark:text-gray-100 font-display" href="#">SimpleBlog</a>
+</div>
+</div>
+</header>
+<main class="flex-grow">
+<div class="mx-auto max-w-[680px] px-4 py-8 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+<a class="mb-8 inline-flex items-center gap-2 text-primary hover:underline" href="#">
+<span aria-hidden="true">←</span>
+                All posts
+            </a>
+<article>
+<header class="mb-8">
+<h1 class="font-display text-4xl font-bold tracking-tight text-[#1F2937] dark:text-gray-100 sm:text-[36px]">The Art of Minimalist Design</h1>
+<p class="mt-3 text-base text-[#64748B] dark:text-gray-500">Published on October 26, 2023 · 5 min read</p>
+</header>
+<div class="prose prose-lg dark:prose-invert max-w-none leading-relaxed" style="--tw-prose-bullets: #64748B; --tw-prose-counters: #64748B;">
+<p class="text-lg leading-[1.7]">Discover how less can be more. In this post, we explore the core principles of minimalist design and how you can apply them to create clean, beautiful, and functional interfaces that delight users and stand the test of time.</p>
+<p>Minimalism isn't about removing things arbitrarily; it's about making intentional choices. Every element on the screen should have a purpose. By stripping away the non-essential, you bring clarity and focus to what truly matters: the content and the user's goal.</p>
+<h2>Core Principles</h2>
+<p>To truly embrace minimalist design, consider these foundational principles:</p>
+<ul>
+<li><strong>Negative Space:</strong> Also known as white space, this is the area around elements. Generous use of negative space improves readability and reduces cognitive load.</li>
+<li><strong>Limited Color Palette:</strong> A restrained color scheme, often monochromatic or with one or two accent colors, creates a sense of harmony and sophistication.</li>
+<li><strong>Strong Typography:</strong> With fewer visual elements, typography becomes critical. A well-chosen typeface can set the tone, establish hierarchy, and improve user experience.</li>
+</ul>
+<p>Let's look at an example of how to implement a minimalist button component. Instead of using flashy gradients and shadows, we focus on clean lines and clear text.</p>
+<pre><code class="language-html">&lt;button class="bg-blue-600 text-white px-4 py-2 rounded"&gt;
+  Primary Action
+&lt;/button&gt;</code></pre>
+<p>The code above is simple, direct, and effective. The user immediately understands its function without being distracted by unnecessary styling. This principle of clarity is at the heart of minimalism.</p>
+<hr class="my-12 border-gray-200 dark:border-gray-800"/>
+<footer class="text-center text-base text-[#64748B] dark:text-gray-500">
+                        Written by Alex Doe
+                    </footer>
+</div>
+</article>
+</div>
+</main>
+<footer class="mt-auto w-full border-t border-gray-200/80 dark:border-gray-800/50">
+<div class="mx-auto flex max-w-5xl flex-col items-center justify-between gap-4 px-4 py-8 sm:flex-row sm:px-6 lg:px-8">
+<p class="text-sm text-[#64748B] dark:text-gray-500">© 2024 SimpleBlog. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="text-sm text-[#64748B] hover:text-primary dark:text-gray-500 dark:hover:text-primary" href="#">About</a>
+<a class="text-sm text-[#64748B] hover:text-primary dark:text-gray-500 dark:hover:text-primary" href="#">Contact</a>
+<a class="text-sm text-[#64748B] hover:text-primary dark:text-gray-500 dark:hover:text-primary" href="#">Privacy Policy</a>
+</div>
+</div>
+</footer>
+</div>
+<style type="text/tailwindcss">
+    @layer base {
+      .prose {
+        @apply text-gray-800;
+        line-height: 1.7;
+      }
+      .prose h2 {
+        @apply font-display text-2xl font-bold mt-12 mb-4 text-gray-900;
+      }
+      .prose p {
+        @apply mb-4;
+      }
+      .prose a {
+        @apply text-primary hover:underline;
+      }
+      .prose ul {
+        @apply list-disc pl-6 mb-4;
+      }
+      .prose li {
+        @apply mb-2;
+      }
+      .prose pre {
+        @apply bg-[#F8FAFC] dark:bg-[#1E293B] rounded-lg p-4 my-6 overflow-x-auto text-sm;
+      }
+      .prose code {
+        @apply font-mono;
+      }
+      .prose code:not(pre > code) {
+        @apply bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded-md text-sm;
+      }
+      .dark .prose {
+        @apply text-gray-300;
+      }
+      .dark .prose h2 {
+        @apply text-gray-100;
+      }
+    }
+  </style>
+
+</body></html>
