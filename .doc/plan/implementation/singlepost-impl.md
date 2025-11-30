@@ -71,14 +71,14 @@ npm install lucide-react clsx tailwind-merge
 
 ### 0. 페이지 라우트 및 폴더 생성
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `app/blog/[slug]/page.tsx`
 
 **요구사항:**
-- [ ] `app/blog/[slug]/` 폴더 생성 (Dynamic Route)
-- [ ] `page.tsx` 생성
-- [ ] Server Component로 구현
-- [ ] `generateMetadata` 함수 구현 (SEO)
+- [x] `app/blog/[slug]/` 폴더 생성 (Dynamic Route)
+- [x] `page.tsx` 생성
+- [x] Server Component로 구현
+- [x] `generateMetadata` 함수 구현 (SEO)
 
 **기본 구조:**
 
@@ -156,21 +156,21 @@ export default async function SinglePostPage({ params }: PageProps) {
 ```
 
 **완료 조건:**
-- [ ] 페이지 정상 렌더링
-- [ ] Dynamic Route 동작 확인
-- [ ] 404 처리 동작 확인
+- [x] 페이지 정상 렌더링
+- [x] Dynamic Route 동작 확인
+- [x] 404 처리 동작 확인
 
 ---
 
 ### 1. BackLink 컴포넌트
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `app/blog/[slug]/BackLink.tsx`
 
 **요구사항:**
-- [ ] "← All posts" 텍스트
-- [ ] `/blog` 페이지로 링크
-- [ ] hover 시 underline
+- [x] "← All posts" 텍스트
+- [x] `/blog` 페이지로 링크
+- [x] hover 시 underline
 
 **Props Interface:**
 
@@ -206,22 +206,22 @@ export function BackLink() {
 ```
 
 **완료 조건:**
-- [ ] 링크 정상 동작
-- [ ] 아이콘 표시
-- [ ] hover 효과
+- [x] 링크 정상 동작
+- [x] 아이콘 표시
+- [x] hover 효과
 
 ---
 
 ### 2. ArticleHeader 컴포넌트
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `app/blog/[slug]/ArticleHeader.tsx`
 
 **요구사항:**
-- [ ] 포스트 제목 (h1)
-- [ ] 발행일 표시
-- [ ] 읽기 시간 표시
-- [ ] 반응형 폰트 크기
+- [x] 포스트 제목 (h1)
+- [x] 발행일 표시
+- [x] 읽기 시간 표시
+- [x] 반응형 폰트 크기
 
 **Props Interface:**
 
@@ -270,23 +270,23 @@ export function ArticleHeader({ title, publishedAt, readTime }: ArticleHeaderPro
 ```
 
 **완료 조건:**
-- [ ] 제목 정상 표시
-- [ ] 날짜 포맷 정상
-- [ ] 읽기 시간 표시
-- [ ] 반응형 폰트 크기
+- [x] 제목 정상 표시
+- [x] 날짜 포맷 정상
+- [x] 읽기 시간 표시
+- [x] 반응형 폰트 크기
 
 ---
 
 ### 3. MarkdownContent 컴포넌트
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `app/blog/[slug]/MarkdownContent.tsx`
 
 **요구사항:**
-- [ ] Markdown → HTML 렌더링
-- [ ] Prose 스타일 적용
-- [ ] 코드 블록 스타일
-- [ ] 다크모드 지원
+- [x] Markdown → HTML 렌더링
+- [x] Prose 스타일 적용
+- [x] 코드 블록 스타일
+- [x] 다크모드 지원
 
 **Props Interface:**
 
@@ -386,24 +386,24 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
 ```
 
 **완료 조건:**
-- [ ] Markdown 정상 렌더링
-- [ ] 제목 스타일 적용 (h2, h3)
-- [ ] 링크 스타일 적용
-- [ ] 코드 블록 스타일 적용
-- [ ] 리스트 스타일 적용
-- [ ] 인용구 스타일 적용
-- [ ] 다크모드 지원
+- [x] Markdown 정상 렌더링
+- [x] 제목 스타일 적용 (h2, h3)
+- [x] 링크 스타일 적용
+- [x] 코드 블록 스타일 적용
+- [x] 리스트 스타일 적용
+- [x] 인용구 스타일 적용
+- [x] 다크모드 지원
 
 ---
 
 ### 4. ArticleFooter 컴포넌트
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `app/blog/[slug]/ArticleFooter.tsx`
 
 **요구사항:**
-- [ ] 작성자 이름 표시
-- [ ] "Written by [Author]" 형식
+- [x] 작성자 이름 표시
+- [x] "Written by [Author]" 형식
 
 **Props Interface:**
 
@@ -436,20 +436,20 @@ export function ArticleFooter({ authorName = "Anonymous" }: ArticleFooterProps) 
 ```
 
 **완료 조건:**
-- [ ] 작성자 이름 정상 표시
-- [ ] 기본값 "Anonymous" 처리
-- [ ] 다크모드 지원
+- [x] 작성자 이름 정상 표시
+- [x] 기본값 "Anonymous" 처리
+- [x] 다크모드 지원
 
 ---
 
 ### 5. Loading State
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `app/blog/[slug]/loading.tsx`
 
 **요구사항:**
-- [ ] 스켈레톤 UI
-- [ ] 포스트 로딩 중 표시
+- [x] 스켈레톤 UI
+- [x] 포스트 로딩 중 표시
 
 **기본 구조:**
 
@@ -489,19 +489,19 @@ export default function Loading() {
 ```
 
 **완료 조건:**
-- [ ] 스켈레톤 애니메이션 동작
-- [ ] 레이아웃 일관성
+- [x] 스켈레톤 애니메이션 동작
+- [x] 레이아웃 일관성
 
 ---
 
 ### 6. Not Found Page
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `app/blog/[slug]/not-found.tsx`
 
 **요구사항:**
-- [ ] 404 메시지
-- [ ] 블로그 목록으로 돌아가기 링크
+- [x] 404 메시지
+- [x] 블로그 목록으로 돌아가기 링크
 
 **기본 구조:**
 
@@ -533,19 +533,19 @@ export default function NotFound() {
 ```
 
 **완료 조건:**
-- [ ] 404 메시지 표시
-- [ ] 링크 정상 동작
+- [x] 404 메시지 표시
+- [x] 링크 정상 동작
 
 ---
 
 ### 7. 유틸리티 함수 추가
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `lib/utils.ts`
 
 **요구사항:**
-- [ ] `formatDate` 함수 추가
-- [ ] `calculateReadTime` 함수 추가
+- [x] `formatDate` 함수 추가
+- [x] `calculateReadTime` 함수 추가
 
 **기본 구조:**
 
@@ -577,8 +577,8 @@ export function calculateReadTime(content: string): number {
 ```
 
 **완료 조건:**
-- [ ] `formatDate` 정상 동작
-- [ ] `calculateReadTime` 정상 동작
+- [x] `formatDate` 정상 동작
+- [x] `calculateReadTime` 정상 동작
 
 ---
 
@@ -600,43 +600,43 @@ export function calculateReadTime(content: string): number {
 ## 검증 체크리스트
 
 ### BackLink
-- [ ] `/blog` 페이지로 이동
-- [ ] 아이콘 정상 표시
-- [ ] hover 효과 동작
+- [x] `/blog` 페이지로 이동
+- [x] 아이콘 정상 표시
+- [x] hover 효과 동작
 
 ### ArticleHeader
-- [ ] 제목 정상 표시
-- [ ] 반응형 폰트 크기 (text-4xl → text-[36px])
-- [ ] 발행일 포맷 정상
-- [ ] 읽기 시간 표시
+- [x] 제목 정상 표시
+- [x] 반응형 폰트 크기 (text-4xl → text-[36px])
+- [x] 발행일 포맷 정상
+- [x] 읽기 시간 표시
 
 ### MarkdownContent
-- [ ] Markdown 정상 렌더링
-- [ ] 제목 (h2, h3) 스타일 적용
-- [ ] 링크 스타일 적용
-- [ ] 코드 블록 스타일 적용
-- [ ] 인라인 코드 스타일 적용
-- [ ] 리스트 스타일 적용
-- [ ] 인용구 스타일 적용
-- [ ] 다크모드 지원
+- [x] Markdown 정상 렌더링
+- [x] 제목 (h2, h3) 스타일 적용
+- [x] 링크 스타일 적용
+- [x] 코드 블록 스타일 적용
+- [x] 인라인 코드 스타일 적용
+- [x] 리스트 스타일 적용
+- [x] 인용구 스타일 적용
+- [x] 다크모드 지원
 
 ### ArticleFooter
-- [ ] 작성자 이름 표시
-- [ ] 기본값 처리
+- [x] 작성자 이름 표시
+- [x] 기본값 처리
 
 ### Single Post Page
-- [ ] Dynamic Route 동작 (`/blog/[slug]`)
-- [ ] 포스트 데이터 정상 로드
-- [ ] 404 처리 (없는 포스트)
-- [ ] 404 처리 (비공개 포스트)
-- [ ] Loading 상태 표시
-- [ ] SEO 메타데이터 적용
+- [x] Dynamic Route 동작 (`/blog/[slug]`)
+- [x] 포스트 데이터 정상 로드
+- [x] 404 처리 (없는 포스트)
+- [x] 404 처리 (비공개 포스트)
+- [x] Loading 상태 표시
+- [x] SEO 메타데이터 적용
 
 ### SEO
-- [ ] `<title>` 태그 동적 생성
-- [ ] `<meta description>` 동적 생성
-- [ ] Open Graph 태그 생성
-- [ ] Twitter Card 태그 생성
+- [x] `<title>` 태그 동적 생성
+- [x] `<meta description>` 동적 생성
+- [x] Open Graph 태그 생성
+- [x] Twitter Card 태그 생성
 
 ---
 
