@@ -59,13 +59,13 @@ SimpleBlog의 공개 블로그 글 목록 페이지 구현
 
 ### 0. 페이지 라우트 생성
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `app/blog/page.tsx`
 
 **요구사항:**
-- [ ] `app/blog/page.tsx` 생성
-- [ ] metadata 설정 (title, description)
-- [ ] Server Component로 구현 (데이터 fetching)
+- [x] `app/blog/page.tsx` 생성
+- [x] metadata 설정 (title, description)
+- [x] Server Component로 구현 (데이터 fetching)
 
 **기본 구조:**
 
@@ -97,23 +97,23 @@ export default async function BlogPage() {
 ```
 
 **완료 조건:**
-- [ ] 페이지 접근 가능 (`/blog`)
-- [ ] 메타데이터 설정 완료
-- [ ] min-h-screen 레이아웃
+- [x] 페이지 접근 가능 (`/blog`)
+- [x] 메타데이터 설정 완료
+- [x] min-h-screen 레이아웃
 
 ---
 
 ### 1. PostCard 컴포넌트
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `app/blog/PostCard.tsx`
 
 **요구사항:**
-- [ ] 제목 (primary 색상, hover 시 underline)
-- [ ] 발췌문 (2줄 제한 - line-clamp-2)
-- [ ] 메타 정보 (날짜, 읽기 시간)
-- [ ] 클릭 시 상세 페이지 이동 (`/blog/[slug]`)
-- [ ] 다크모드 지원
+- [x] 제목 (primary 색상, hover 시 underline)
+- [x] 발췌문 (2줄 제한 - line-clamp-2)
+- [x] 메타 정보 (날짜, 읽기 시간)
+- [x] 클릭 시 상세 페이지 이동 (`/blog/[slug]`)
+- [x] 다크모드 지원
 
 **Props Interface:**
 
@@ -182,22 +182,22 @@ export function PostCard({
 ```
 
 **완료 조건:**
-- [ ] 제목 클릭 시 상세 페이지 이동
-- [ ] 발췌문 2줄 제한 동작
-- [ ] 날짜 포맷 정상 표시
-- [ ] 다크모드 스타일 적용
+- [x] 제목 클릭 시 상세 페이지 이동
+- [x] 발췌문 2줄 제한 동작
+- [x] 날짜 포맷 정상 표시
+- [x] 다크모드 스타일 적용
 
 ---
 
 ### 2. PostList 컴포넌트 (컨테이너)
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `app/blog/PostList.tsx`
 
 **요구사항:**
-- [ ] PostCard 목록 렌더링
-- [ ] 빈 상태 처리 (포스트 없을 때)
-- [ ] 세로 간격 (gap-6)
+- [x] PostCard 목록 렌더링
+- [x] 빈 상태 처리 (포스트 없을 때)
+- [x] 세로 간격 (gap-6)
 
 **Props Interface:**
 
@@ -264,22 +264,22 @@ export function PostList({ posts }: PostListProps) {
 ```
 
 **완료 조건:**
-- [ ] 포스트 목록 정상 렌더링
-- [ ] 빈 상태 메시지 표시
-- [ ] 간격 정상 적용
+- [x] 포스트 목록 정상 렌더링
+- [x] 빈 상태 메시지 표시
+- [x] 간격 정상 적용
 
 ---
 
 ### 3. Blog Page 조립
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `app/blog/page.tsx`
 
 **요구사항:**
-- [ ] Header (variant='public') 배치
-- [ ] 페이지 제목 "Latest Posts"
-- [ ] PostList 배치 (max-w-[720px] centered)
-- [ ] Footer 배치
+- [x] Header (variant='public') 배치
+- [x] 페이지 제목 "Latest Posts"
+- [x] PostList 배치 (max-w-[720px] centered)
+- [x] Footer 배치
 
 **스타일:**
 
@@ -329,21 +329,21 @@ export default async function BlogPage() {
 ```
 
 **완료 조건:**
-- [ ] Header/Footer 정상 표시
-- [ ] 페이지 제목 스타일 일치
-- [ ] 포스트 목록 중앙 정렬
-- [ ] 반응형 패딩 동작
+- [x] Header/Footer 정상 표시
+- [x] 페이지 제목 스타일 일치
+- [x] 포스트 목록 중앙 정렬
+- [x] 반응형 패딩 동작
 
 ---
 
 ### 4. Loading State (선택적)
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `app/blog/loading.tsx`
 
 **요구사항:**
-- [ ] 스켈레톤 UI 표시
-- [ ] 레이아웃 유지 (Header, Footer)
+- [x] 스켈레톤 UI 표시
+- [x] 레이아웃 유지 (Header, Footer)
 
 **기본 구조:**
 
@@ -392,19 +392,19 @@ export default function BlogLoading() {
 ```
 
 **완료 조건:**
-- [ ] 로딩 중 스켈레톤 표시
-- [ ] 레이아웃 shift 없음
+- [x] 로딩 중 스켈레톤 표시
+- [x] 레이아웃 shift 없음
 
 ---
 
 ### 5. 유틸리티 함수 추가
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `lib/utils.ts`
 
 **요구사항:**
-- [ ] formatDate 함수
-- [ ] calculateReadTime 함수
+- [x] formatDate 함수
+- [x] calculateReadTime 함수
 
 **기본 구조:**
 
@@ -436,20 +436,20 @@ export function calculateReadTime(content: string, wordsPerMinute = 200): number
 ```
 
 **완료 조건:**
-- [ ] formatDate: "October 26, 2023" 형식
-- [ ] calculateReadTime: 최소 1분 반환
+- [x] formatDate: "October 26, 2023" 형식
+- [x] calculateReadTime: 최소 1분 반환
 
 ---
 
 ### 6. Server Action 연결 (Stub)
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `actions/posts.ts`
 
 **요구사항:**
-- [ ] getPublishedPosts() 함수 생성
-- [ ] 타입 정의
-- [ ] Supabase 연동 (추후)
+- [x] getPublishedPosts() 함수 생성
+- [x] 타입 정의
+- [x] Supabase 연동 (추후)
 
 **기본 구조 (Stub):**
 
@@ -525,9 +525,9 @@ export async function getPublishedPosts(): Promise<Post[]> {
 ```
 
 **완료 조건:**
-- [ ] Mock 데이터로 개발 테스트 가능
-- [ ] Post 타입 정의 완료
-- [ ] Supabase 연동 준비 (주석)
+- [x] Mock 데이터로 개발 테스트 가능
+- [x] Post 타입 정의 완료
+- [x] Supabase 연동 준비 (주석)
 
 ---
 
@@ -565,32 +565,32 @@ lib/
 ## 검증 체크리스트
 
 ### PostCard
-- [ ] 제목 클릭 → `/blog/[slug]` 이동
-- [ ] 발췌문 2줄 제한 (line-clamp-2)
-- [ ] 날짜 포맷: "October 26, 2023"
-- [ ] 읽기 시간 표시: "5 min read"
-- [ ] 다크모드 스타일
+- [x] 제목 클릭 → `/blog/[slug]` 이동
+- [x] 발췌문 2줄 제한 (line-clamp-2)
+- [x] 날짜 포맷: "October 26, 2023"
+- [x] 읽기 시간 표시: "5 min read"
+- [x] 다크모드 스타일
 
 ### PostList
-- [ ] 포스트 목록 렌더링
-- [ ] 빈 상태 메시지 표시
-- [ ] 간격 (gap-6) 정상
+- [x] 포스트 목록 렌더링
+- [x] 빈 상태 메시지 표시
+- [x] 간격 (gap-6) 정상
 
 ### Blog Page
-- [ ] Header (public variant) 표시
-- [ ] 페이지 제목 "Latest Posts"
-- [ ] 컨텐츠 max-w-[720px] 중앙 정렬
-- [ ] Footer 표시
-- [ ] 반응형 패딩
+- [x] Header (public variant) 표시
+- [x] 페이지 제목 "Latest Posts"
+- [x] 컨텐츠 max-w-[720px] 중앙 정렬
+- [x] Footer 표시
+- [x] 반응형 패딩
 
 ### Loading State
-- [ ] 스켈레톤 UI 표시
-- [ ] 레이아웃 shift 없음
+- [x] 스켈레톤 UI 표시
+- [x] 레이아웃 shift 없음
 
 ### 공통
-- [ ] 다크모드 전체 지원
-- [ ] 반응형 (mobile/tablet/desktop)
-- [ ] TypeScript 타입 에러 없음
+- [x] 다크모드 전체 지원
+- [x] 반응형 (mobile/tablet/desktop)
+- [x] TypeScript 타입 에러 없음
 
 ---
 

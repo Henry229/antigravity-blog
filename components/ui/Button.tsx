@@ -38,32 +38,38 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     children,
     ...props
   }, ref) => {
-    const Comp = asChild ? Slot : "button"
     const isDisabled = disabled || loading
 
-    // asChild일 때는 button 전용 props를 전달하지 않음
-    const buttonProps = asChild
-      ? {}
-      : { ref, disabled: isDisabled, type }
+    const combinedClassName = cn(
+      "inline-flex items-center justify-center rounded-lg font-bold transition-colors",
+      "focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2",
+      "disabled:opacity-50 disabled:pointer-events-none",
+      isDisabled && "opacity-50 pointer-events-none",
+      variantStyles[variant],
+      sizeStyles[size],
+      fullWidth && "w-full",
+      className
+    )
+
+    if (asChild) {
+      return (
+        <Slot className={combinedClassName} {...props}>
+          {children}
+        </Slot>
+      )
+    }
 
     return (
-      <Comp
-        className={cn(
-          "inline-flex items-center justify-center rounded-lg font-bold transition-colors",
-          "focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2",
-          "disabled:opacity-50 disabled:pointer-events-none",
-          isDisabled && "opacity-50 pointer-events-none",
-          variantStyles[variant],
-          sizeStyles[size],
-          fullWidth && "w-full",
-          className
-        )}
-        {...buttonProps}
+      <button
+        ref={ref}
+        type={type}
+        disabled={isDisabled}
+        className={combinedClassName}
         {...props}
       >
         {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
         {children}
-      </Comp>
+      </button>
     )
   }
 )

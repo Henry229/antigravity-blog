@@ -14,6 +14,46 @@ export interface Post {
 /**
  * Get all published posts, ordered by published_at DESC
  */
+export interface PostWithAuthor extends Post {
+  author_name?: string;
+  read_time: number;
+}
+
+/**
+ * Get a single published post by slug
+ */
+export async function getPostBySlug(slug: string): Promise<PostWithAuthor | null> {
+  // TODO: Supabase 연동 후 실제 구현
+  // const supabase = createClient()
+  // const { data, error } = await supabase
+  //   .from('posts')
+  //   .select('*, profiles(name)')
+  //   .eq('slug', slug)
+  //   .single()
+
+  // Mock data for development
+  const posts = await getPublishedPosts()
+  const post = posts.find(p => p.slug === slug)
+
+  if (!post) {
+    return null
+  }
+
+  // Calculate read time based on content
+  const wordsPerMinute = 200
+  const wordCount = post.content.trim().split(/\s+/).length
+  const readTime = Math.max(1, Math.ceil(wordCount / wordsPerMinute))
+
+  return {
+    ...post,
+    author_name: "John Doe",
+    read_time: readTime,
+  }
+}
+
+/**
+ * Get all published posts, ordered by published_at DESC
+ */
 export async function getPublishedPosts(): Promise<Post[]> {
   // TODO: Supabase 연동 후 실제 구현
   // const supabase = createClient()
