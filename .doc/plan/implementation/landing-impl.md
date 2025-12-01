@@ -62,13 +62,13 @@ npm install lucide-react clsx tailwind-merge
 
 ### 0. 페이지 라우트 생성
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `app/page.tsx`
 
 **요구사항:**
-- [ ] `app/page.tsx` 파일 생성
-- [ ] metadata 설정 (title, description)
-- [ ] Server Component로 구현
+- [x] `app/page.tsx` 파일 생성
+- [x] metadata 설정 (title, description)
+- [x] Server Component로 구현
 
 **기본 구조:**
 
@@ -99,41 +99,41 @@ export default function LandingPage() {
 ```
 
 **완료 조건:**
-- [ ] 페이지 정상 렌더링
-- [ ] metadata 적용 확인 (브라우저 탭 타이틀)
+- [x] 페이지 정상 렌더링
+- [x] metadata 적용 확인 (브라우저 탭 타이틀)
 
 ---
 
 ### 1. Route Group 폴더 생성
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `app/(home)/` 폴더
 
 **요구사항:**
-- [ ] `app/(home)/` 폴더 생성 (route group)
-- [ ] 페이지 전용 컴포넌트 배치용
+- [x] `app/(home)/` 폴더 생성 (route group)
+- [x] 페이지 전용 컴포넌트 배치용
 
 **완료 조건:**
-- [ ] 폴더 구조 정상 생성
+- [x] 폴더 구조 정상 생성
 
 ---
 
 ### 2. HeroSection 컴포넌트
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `app/(home)/HeroSection.tsx`
 
 **요구사항:**
-- [ ] Headline: "Write. Publish. Share."
-- [ ] Subtext: 서비스 설명
-- [ ] CTA 버튼 2개 (Get Started, Read Blog)
-- [ ] 반응형 레이아웃 (모바일 → 데스크탑)
-- [ ] 중앙 정렬
+- [x] Headline: "Write. Publish. Share."
+- [x] Subtext: 서비스 설명
+- [x] CTA 버튼 2개 (Get Started, Read Blog)
+- [x] 반응형 레이아웃 (모바일 → 데스크탑)
+- [x] 중앙 정렬
 
 **비즈니스 로직:**
-- [ ] "Get Started" 클릭 → `/signup` 이동
-- [ ] "Read Blog" 클릭 → `/blog` 이동
-- [ ] (선택) 로그인 상태면 "Get Started" → `/dashboard` 이동
+- [x] "Get Started" 클릭 → `/signup` 이동
+- [x] "Read Blog" 클릭 → `/blog` 이동
+- [x] (선택) 로그인 상태면 "Get Started" → `/dashboard` 이동
 
 **스타일 (HTML에서 추출):**
 
@@ -186,25 +186,25 @@ export function HeroSection() {
 ```
 
 **완료 조건:**
-- [ ] Headline 정상 표시 (반응형 폰트 크기)
-- [ ] Subtext 정상 표시
-- [ ] CTA 버튼 정상 동작
-- [ ] 모바일에서 레이아웃 정상
-- [ ] 다크모드 지원
+- [x] Headline 정상 표시 (반응형 폰트 크기)
+- [x] Subtext 정상 표시
+- [x] CTA 버튼 정상 동작
+- [x] 모바일에서 레이아웃 정상
+- [x] 다크모드 지원
 
 ---
 
 ### 3. FeatureCard 컴포넌트
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `app/(home)/FeatureCard.tsx`
 
 **요구사항:**
-- [ ] 아이콘 영역 (Lucide React 사용)
-- [ ] 제목
-- [ ] 설명
-- [ ] 카드 스타일 (border, rounded, padding)
-- [ ] 다크모드 지원
+- [x] 아이콘 영역 (Lucide React 사용)
+- [x] 제목
+- [x] 설명
+- [x] 카드 스타일 (border, rounded, padding)
+- [x] 다크모드 지원
 
 **Props Interface:**
 
@@ -261,23 +261,23 @@ export function FeatureCard({ icon: Icon, title, description }: FeatureCardProps
 ```
 
 **완료 조건:**
-- [ ] 아이콘 정상 표시
-- [ ] 제목/설명 정상 표시
-- [ ] 카드 스타일 적용
-- [ ] 다크모드 지원
+- [x] 아이콘 정상 표시
+- [x] 제목/설명 정상 표시
+- [x] 카드 스타일 적용
+- [x] 다크모드 지원
 
 ---
 
 ### 4. FeatureSection 컴포넌트
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `app/(home)/FeatureSection.tsx`
 
 **요구사항:**
-- [ ] 섹션 제목 (선택)
-- [ ] 3-column 그리드 레이아웃
-- [ ] 반응형 (1열 → 2열 → 3열)
-- [ ] FeatureCard 3개 배치
+- [x] 섹션 제목 (선택)
+- [x] 3-column 그리드 레이아웃
+- [x] 반응형 (1열 → 2열 → 3열)
+- [x] FeatureCard 3개 배치
 
 **스타일:**
 
@@ -363,29 +363,29 @@ export function FeatureSection() {
 ```
 
 **완료 조건:**
-- [ ] 3개의 FeatureCard 정상 표시
-- [ ] 반응형 그리드 동작 (1열 → 2열 → 3열)
-- [ ] 모바일에서 레이아웃 정상
-- [ ] 다크모드 지원
+- [x] 3개의 FeatureCard 정상 표시
+- [x] 반응형 그리드 동작 (1열 → 2열 → 3열)
+- [x] 모바일에서 레이아웃 정상
+- [x] 다크모드 지원
 
 ---
 
 ### 5. Landing Page 조립
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `app/page.tsx`
 
 **요구사항:**
-- [ ] Header (variant='landing') import
-- [ ] HeroSection import
-- [ ] FeatureSection import
-- [ ] Footer import
-- [ ] 전체 레이아웃 구성
+- [x] Header (variant='landing') import
+- [x] HeroSection import
+- [x] FeatureSection import
+- [x] Footer import
+- [x] 전체 레이아웃 구성
 
 **완료 조건:**
-- [ ] 전체 페이지 정상 렌더링
-- [ ] 공통 컴포넌트 정상 표시
-- [ ] 페이지 전용 컴포넌트 정상 표시
+- [x] 전체 페이지 정상 렌더링
+- [x] 공통 컴포넌트 정상 표시
+- [x] 페이지 전용 컴포넌트 정상 표시
 
 ---
 
@@ -403,33 +403,33 @@ export function FeatureSection() {
 ## 검증 체크리스트
 
 ### HeroSection
-- [ ] Headline 텍스트 정상 표시
-- [ ] 반응형 폰트 크기 (text-5xl → text-6xl)
-- [ ] Subtext 정상 표시
-- [ ] "Get Started" 버튼 → `/signup` 이동
-- [ ] "Read Blog" 버튼 → `/blog` 이동
-- [ ] 모바일에서 레이아웃 정상
-- [ ] 다크모드 지원
+- [x] Headline 텍스트 정상 표시
+- [x] 반응형 폰트 크기 (text-5xl → text-6xl)
+- [x] Subtext 정상 표시
+- [x] "Get Started" 버튼 → `/signup` 이동
+- [x] "Read Blog" 버튼 → `/blog` 이동
+- [x] 모바일에서 레이아웃 정상
+- [x] 다크모드 지원
 
 ### FeatureCard
-- [ ] Lucide 아이콘 정상 표시
-- [ ] 제목/설명 정상 표시
-- [ ] 카드 스타일 (border, rounded, shadow)
-- [ ] 다크모드 지원
+- [x] Lucide 아이콘 정상 표시
+- [x] 제목/설명 정상 표시
+- [x] 카드 스타일 (border, rounded, shadow)
+- [x] 다크모드 지원
 
 ### FeatureSection
-- [ ] 3개 카드 정상 표시
-- [ ] 반응형 그리드 (1열 → 2열 → 3열)
-- [ ] 카드 간 간격 정상
+- [x] 3개 카드 정상 표시
+- [x] 반응형 그리드 (1열 → 2열 → 3열)
+- [x] 카드 간 간격 정상
 
 ### Landing Page
-- [ ] Header (landing variant) 정상 표시
-- [ ] HeroSection 정상 표시
-- [ ] FeatureSection 정상 표시
-- [ ] Footer 정상 표시
-- [ ] 전체 레이아웃 정상
-- [ ] 스크롤 동작 정상
-- [ ] 다크모드 전환 정상
+- [x] Header (landing variant) 정상 표시
+- [x] HeroSection 정상 표시
+- [x] FeatureSection 정상 표시
+- [x] Footer 정상 표시
+- [x] 전체 레이아웃 정상
+- [x] 스크롤 동작 정상
+- [x] 다크모드 전환 정상
 
 ---
 
@@ -506,12 +506,12 @@ app/
 
 ### Phase 2: 인증 연동
 
-- [ ] 로그인 상태 확인 로직 추가
-- [ ] 로그인 시 "Get Started" → `/dashboard` 이동
-- [ ] Header에서 로그인 상태 표시
+- [x] 로그인 상태 확인 로직 추가
+- [x] 로그인 시 "Get Started" → `/dashboard` 이동
+- [x] Header에서 로그인 상태 표시
 
 ### Phase 3: 애니메이션
 
-- [ ] Hero 섹션 fade-in 애니메이션
-- [ ] Feature 카드 hover 효과
-- [ ] 스크롤 애니메이션 (Intersection Observer)
+- [x] Hero 섹션 fade-in 애니메이션
+- [x] Feature 카드 hover 효과
+- [x] 스크롤 애니메이션 (Intersection Observer)

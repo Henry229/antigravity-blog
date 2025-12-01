@@ -29,7 +29,7 @@ export function PostCard({
           {excerpt}
         </p>
         <p className="text-sm text-gray-500 dark:text-gray-400">
-          {formatDate(publishedAt)}{publishedAt && ' · '}{readTime} min read
+          {publishedAt ? `${formatDate(publishedAt)} · ` : ''}{readTime} min read
         </p>
       </div>
     </article>

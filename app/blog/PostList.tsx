@@ -1,14 +1,6 @@
 import { PostCard } from "./PostCard"
 import { calculateReadTime } from "@/lib/utils"
-
-interface Post {
-  id: string;
-  title: string;
-  slug: string;
-  excerpt: string | null;
-  published_at: Date | null;
-  content: string;
-}
+import type { Post } from "@/types"
 
 interface PostListProps {
   posts: Post[];
@@ -32,7 +24,7 @@ export function PostList({ posts }: PostListProps) {
           key={post.id}
           title={post.title}
           slug={post.slug}
-          excerpt={post.excerpt || post.content.slice(0, 150) + "..."}
+          excerpt={post.excerpt || (post.content.length > 150 ? post.content.slice(0, 150) + "..." : post.content)}
           publishedAt={post.published_at}
           readTime={calculateReadTime(post.content)}
         />

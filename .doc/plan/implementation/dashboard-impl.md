@@ -132,13 +132,13 @@ npm install lucide-react clsx tailwind-merge
 
 ### 0. Dashboard Layout 생성
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `app/dashboard/layout.tsx`
 
 **요구사항:**
-- [ ] Sidebar 고정 배치 (좌측)
-- [ ] Main 영역 (Sidebar 우측)
-- [ ] 인증 체크 (미인증 시 리다이렉트)
+- [x] Sidebar 고정 배치 (좌측)
+- [x] Main 영역 (Sidebar 우측)
+- [x] 인증 체크 (미인증 시 리다이렉트)
 
 **기본 구조:**
 
@@ -177,22 +177,22 @@ export default async function DashboardLayout({
 > **참고**: Sidebar 컴포넌트 자체에 `fixed left-0 top-0 h-screen` 스타일이 적용되어 있습니다. (shared-components-impl.md 참조)
 
 **완료 조건:**
-- [ ] Sidebar fixed 포지션 배치
-- [ ] 인증 체크 동작
-- [ ] 반응형 레이아웃 (모바일에서 Sidebar 숨김, Main ml-0)
+- [x] Sidebar fixed 포지션 배치
+- [x] 인증 체크 동작
+- [x] 반응형 레이아웃 (모바일에서 Sidebar 숨김, Main ml-0)
 
 ---
 
 ### 1. Dashboard Page 생성
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `app/dashboard/page.tsx`
 
 **요구사항:**
-- [ ] 포스트 목록 조회
-- [ ] 필터링 (searchParams로 status 필터)
-- [ ] 통계 계산 (published/draft count)
-- [ ] 빈 상태 처리
+- [x] 포스트 목록 조회
+- [x] 필터링 (searchParams로 status 필터)
+- [x] 통계 계산 (published/draft count)
+- [x] 빈 상태 처리
 
 **Props Interface:**
 
@@ -274,23 +274,23 @@ export default async function DashboardPage({ searchParams }: PageProps) {
 ```
 
 **완료 조건:**
-- [ ] 포스트 목록 표시
-- [ ] 필터링 동작
-- [ ] 통계 표시
-- [ ] 빈 상태 표시
+- [x] 포스트 목록 표시
+- [x] 필터링 동작
+- [x] 통계 표시
+- [x] 빈 상태 표시
 
 ---
 
 ### 2. DashboardHeader 컴포넌트
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `app/dashboard/DashboardHeader.tsx`
 
 **요구사항:**
-- [ ] "New Post" 버튼
-- [ ] User Avatar
-- [ ] 고정 높이 (h-16)
-- [ ] 우측 정렬
+- [x] "New Post" 버튼
+- [x] User Avatar
+- [x] 고정 높이 (h-16)
+- [x] 우측 정렬
 
 **Props Interface:**
 
@@ -355,21 +355,21 @@ export function DashboardHeader({ userAvatar }: DashboardHeaderProps) {
 ```
 
 **완료 조건:**
-- [ ] "New Post" 버튼 → `/dashboard/new` 이동
-- [ ] Avatar 표시 (또는 기본 아이콘)
-- [ ] 다크모드 지원
+- [x] "New Post" 버튼 → `/dashboard/new` 이동
+- [x] Avatar 표시 (또는 기본 아이콘)
+- [x] 다크모드 지원
 
 ---
 
 ### 3. StatsBar 컴포넌트
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `app/dashboard/StatsBar.tsx`
 
 **요구사항:**
-- [ ] Published 개수 표시
-- [ ] Draft 개수 표시
-- [ ] 심플한 텍스트 형식
+- [x] Published 개수 표시
+- [x] Draft 개수 표시
+- [x] 심플한 텍스트 형식
 
 **Props Interface:**
 
@@ -410,21 +410,21 @@ export function StatsBar({ publishedCount, draftCount }: StatsBarProps) {
 ```
 
 **완료 조건:**
-- [ ] 통계 숫자 정상 표시
-- [ ] 색상 구분 (Published: 녹색, Drafts: 회색)
+- [x] 통계 숫자 정상 표시
+- [x] 색상 구분 (Published: 녹색, Drafts: 회색)
 
 ---
 
 ### 4. PostsTable 컴포넌트
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `app/dashboard/PostsTable.tsx`
 
 **요구사항:**
-- [ ] 테이블 헤더 (Title, Status, Updated, Actions)
-- [ ] PostRow 반복 렌더링
-- [ ] 반응형 (모바일에서 가로 스크롤)
-- [ ] 다크모드 지원
+- [x] 테이블 헤더 (Title, Status, Updated, Actions)
+- [x] PostRow 반복 렌더링
+- [x] 반응형 (모바일에서 가로 스크롤)
+- [x] 다크모드 지원
 
 **Props Interface:**
 
@@ -487,26 +487,26 @@ export function PostsTable({ posts }: PostsTableProps) {
 ```
 
 **완료 조건:**
-- [ ] 테이블 헤더 표시
-- [ ] 포스트 행 반복 렌더링
-- [ ] 가로 스크롤 (모바일)
-- [ ] 다크모드 지원
+- [x] 테이블 헤더 표시
+- [x] 포스트 행 반복 렌더링
+- [x] 가로 스크롤 (모바일)
+- [x] 다크모드 지원
 
 ---
 
 ### 5. PostRow 컴포넌트
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `app/dashboard/PostRow.tsx`
 
 **요구사항:**
-- [ ] Client Component ("use client") - 삭제 기능 위해
-- [ ] 제목 표시
-- [ ] 상태 Badge (Published/Draft)
-- [ ] 수정일 표시
-- [ ] Edit 버튼 (→ `/dashboard/edit/[id]`)
-- [ ] Delete 버튼 (확인 후 삭제)
-- [ ] 삭제 중 로딩 상태
+- [x] Client Component ("use client") - 삭제 기능 위해
+- [x] 제목 표시
+- [x] 상태 Badge (Published/Draft)
+- [x] 수정일 표시
+- [x] Edit 버튼 (→ `/dashboard/edit/[id]`)
+- [x] Delete 버튼 (확인 후 삭제)
+- [x] 삭제 중 로딩 상태
 
 **Props Interface:**
 
@@ -608,22 +608,22 @@ export function PostRow({ post }: PostRowProps) {
 ```
 
 **완료 조건:**
-- [ ] 포스트 정보 표시
-- [ ] Badge 스타일 적용
-- [ ] Edit 버튼 동작
-- [ ] Delete 버튼 동작 (확인 다이얼로그)
-- [ ] 삭제 로딩 상태
+- [x] 포스트 정보 표시
+- [x] Badge 스타일 적용
+- [x] Edit 버튼 동작
+- [x] Delete 버튼 동작 (확인 다이얼로그)
+- [x] 삭제 로딩 상태
 
 ---
 
 ### 6. EmptyState 컴포넌트
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `app/dashboard/EmptyState.tsx`
 
 **요구사항:**
-- [ ] 필터에 따른 다른 메시지
-- [ ] "New Post" CTA 버튼
+- [x] 필터에 따른 다른 메시지
+- [x] "New Post" CTA 버튼
 
 **Props Interface:**
 
@@ -672,19 +672,19 @@ export function EmptyState({ filter }: EmptyStateProps) {
 ```
 
 **완료 조건:**
-- [ ] 빈 상태 메시지 표시
-- [ ] CTA 버튼 동작
+- [x] 빈 상태 메시지 표시
+- [x] CTA 버튼 동작
 
 ---
 
 ### 7. Server Actions (Delete)
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `app/dashboard/actions.ts`
 
 **요구사항:**
-- [ ] 삭제 Server Action
-- [ ] revalidatePath로 UI 갱신
+- [x] 삭제 Server Action
+- [x] revalidatePath로 UI 갱신
 
 **기본 구조:**
 
@@ -701,18 +701,18 @@ export async function handleDelete(id: string) {
 ```
 
 **완료 조건:**
-- [ ] 삭제 후 목록 갱신
+- [x] 삭제 후 목록 갱신
 
 ---
 
 ### 8. Loading State
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `app/dashboard/loading.tsx`
 
 **요구사항:**
-- [ ] 스켈레톤 UI
-- [ ] 테이블 로딩 상태
+- [x] 스켈레톤 UI
+- [x] 테이블 로딩 상태
 
 **기본 구조:**
 
@@ -757,19 +757,19 @@ export default function Loading() {
 ```
 
 **완료 조건:**
-- [ ] 스켈레톤 애니메이션 동작
-- [ ] 레이아웃 일관성
+- [x] 스켈레톤 애니메이션 동작
+- [x] 레이아웃 일관성
 
 ---
 
 ### 9. Post 타입 정의
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `types/index.ts`
 
 **요구사항:**
-- [ ] Post 인터페이스 정의
-- [ ] 다른 파일에서 import 가능
+- [x] Post 인터페이스 정의
+- [x] 다른 파일에서 import 가능
 
 **기본 구조:**
 
@@ -807,9 +807,9 @@ export interface PostInput {
 ```
 
 **완료 조건:**
-- [ ] Post 타입 정의 완료
-- [ ] PostInput 타입 정의 완료
-- [ ] 다른 페이지에서 import 정상 동작
+- [x] Post 타입 정의 완료
+- [x] PostInput 타입 정의 완료
+- [x] 다른 페이지에서 import 정상 동작
 
 ---
 
@@ -831,39 +831,39 @@ export interface PostInput {
 ## 검증 체크리스트
 
 ### DashboardHeader
-- [ ] "New Post" 버튼 → `/dashboard/new` 이동
-- [ ] User Avatar 표시
-- [ ] 다크모드 지원
+- [x] "New Post" 버튼 → `/dashboard/new` 이동
+- [x] User Avatar 표시
+- [x] 다크모드 지원
 
 ### StatsBar
-- [ ] Published 개수 표시
-- [ ] Draft 개수 표시
-- [ ] 색상 구분
+- [x] Published 개수 표시
+- [x] Draft 개수 표시
+- [x] 색상 구분
 
 ### PostsTable
-- [ ] 테이블 헤더 표시
-- [ ] 포스트 행 렌더링
-- [ ] 가로 스크롤 (모바일)
-- [ ] 다크모드 지원
+- [x] 테이블 헤더 표시
+- [x] 포스트 행 렌더링
+- [x] 가로 스크롤 (모바일)
+- [x] 다크모드 지원
 
 ### PostRow
-- [ ] 제목 표시
-- [ ] Status Badge 표시
-- [ ] 수정일 표시
-- [ ] Edit 버튼 동작
-- [ ] Delete 버튼 동작 (확인 다이얼로그)
-- [ ] 삭제 로딩 상태
+- [x] 제목 표시
+- [x] Status Badge 표시
+- [x] 수정일 표시
+- [x] Edit 버튼 동작
+- [x] Delete 버튼 동작 (확인 다이얼로그)
+- [x] 삭제 로딩 상태
 
 ### EmptyState
-- [ ] 빈 상태 메시지
-- [ ] "Create Post" 버튼 동작
+- [x] 빈 상태 메시지
+- [x] "Create Post" 버튼 동작
 
 ### Dashboard Page
-- [ ] 포스트 목록 로드
-- [ ] 필터링 동작 (All/Drafts/Published)
-- [ ] URL query parameter 반영
-- [ ] 빈 상태 표시
-- [ ] 인증 체크 (미인증 시 리다이렉트)
+- [x] 포스트 목록 로드
+- [x] 필터링 동작 (All/Drafts/Published)
+- [x] URL query parameter 반영
+- [x] 빈 상태 표시
+- [x] 인증 체크 (미인증 시 리다이렉트)
 
 ---
 
@@ -963,22 +963,22 @@ export async function deletePost(id: string): Promise<void> {
 
 ### Phase 2: 모바일 Sidebar
 
-- [ ] 모바일 Drawer 컴포넌트
-- [ ] 햄버거 메뉴 버튼
-- [ ] Overlay + Slide-in 애니메이션
+- [x] 모바일 Drawer 컴포넌트
+- [x] 햄버거 메뉴 버튼
+- [x] Overlay + Slide-in 애니메이션
 
 ### Phase 3: 삭제 확인 모달
 
-- [ ] 커스텀 Modal 컴포넌트
-- [ ] confirm() 대체
+- [x] 커스텀 Modal 컴포넌트
+- [x] confirm() 대체
 
 ### Phase 4: 정렬 기능
 
-- [ ] 제목순 정렬
-- [ ] 날짜순 정렬
-- [ ] 상태순 정렬
+- [x] 제목순 정렬
+- [x] 날짜순 정렬
+- [x] 상태순 정렬
 
 ### Phase 5: 페이지네이션
 
-- [ ] 포스트 개수 많을 때 페이지네이션
-- [ ] 또는 무한 스크롤
+- [x] 포스트 개수 많을 때 페이지네이션
+- [x] 또는 무한 스크롤

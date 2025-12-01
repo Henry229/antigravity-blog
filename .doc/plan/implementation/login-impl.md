@@ -74,14 +74,14 @@ npm install lucide-react clsx tailwind-merge
 
 ### 0. 페이지 라우트 생성
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `app/login/page.tsx`
 
 **요구사항:**
-- [ ] `app/login/` 폴더 생성
-- [ ] `page.tsx` 생성 (Server Component)
-- [ ] 이미 로그인된 사용자 리다이렉트 처리
-- [ ] AuthCard 레이아웃 적용
+- [x] `app/login/` 폴더 생성
+- [x] `page.tsx` 생성 (Server Component)
+- [x] 이미 로그인된 사용자 리다이렉트 처리
+- [x] AuthCard 레이아웃 적용
 
 **기본 구조:**
 
@@ -134,25 +134,25 @@ export default async function LoginPage() {
 ```
 
 **완료 조건:**
-- [ ] 페이지 정상 렌더링
-- [ ] 로그인된 사용자 리다이렉트 동작
-- [ ] AuthCard 레이아웃 적용
+- [x] 페이지 정상 렌더링
+- [x] 로그인된 사용자 리다이렉트 동작
+- [x] AuthCard 레이아웃 적용
 
 ---
 
 ### 1. LoginForm 컴포넌트 (기본 버전)
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `app/login/LoginForm.tsx`
 
 **요구사항:**
-- [ ] Client Component ("use client")
-- [ ] Email 입력 필드
-- [ ] Password 입력 필드
-- [ ] Submit 버튼
-- [ ] 에러 메시지 표시
-- [ ] 로딩 상태 표시
-- [ ] Server Action 연결
+- [x] Client Component ("use client")
+- [x] Email 입력 필드
+- [x] Password 입력 필드
+- [x] Submit 버튼
+- [x] 에러 메시지 표시
+- [x] 로딩 상태 표시
+- [x] Server Action 연결
 
 **Props Interface:**
 
@@ -233,23 +233,23 @@ export function LoginForm() {
 ```
 
 **완료 조건:**
-- [ ] 입력 필드 정상 동작
-- [ ] 폼 제출 동작
-- [ ] 로딩 상태 표시
-- [ ] 에러 메시지 표시
+- [x] 입력 필드 정상 동작
+- [x] 폼 제출 동작
+- [x] 로딩 상태 표시
+- [x] 에러 메시지 표시
 
 ---
 
 ### 2. LoginForm 컴포넌트 (react-hook-form 버전 - 선택)
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `app/login/LoginForm.tsx` (대체)
 
 **요구사항:**
-- [ ] react-hook-form 사용
-- [ ] Zod 스키마 유효성 검사
-- [ ] 실시간 입력 유효성 검사
-- [ ] 더 나은 에러 처리
+- [x] react-hook-form 사용
+- [x] Zod 스키마 유효성 검사
+- [x] 실시간 입력 유효성 검사
+- [x] 더 나은 에러 처리
 
 **기본 구조:**
 
@@ -341,21 +341,21 @@ export function LoginForm() {
 ```
 
 **완료 조건:**
-- [ ] 실시간 유효성 검사 동작
-- [ ] 에러 메시지 필드별 표시
-- [ ] 폼 제출 동작
+- [x] 실시간 유효성 검사 동작
+- [x] 에러 메시지 필드별 표시
+- [x] 폼 제출 동작
 
 ---
 
 ### 3. Server Action - login
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `actions/auth.ts`
 
 **요구사항:**
-- [ ] Supabase Auth `signInWithPassword` 호출
-- [ ] 에러 처리 및 반환
-- [ ] 성공 시 리다이렉트
+- [x] Supabase Auth `signInWithPassword` 호출
+- [x] 에러 처리 및 반환
+- [x] 성공 시 리다이렉트
 
 **기본 구조:**
 
@@ -385,20 +385,20 @@ export async function login(formData: FormData) {
 ```
 
 **완료 조건:**
-- [ ] Supabase Auth 연동
-- [ ] 로그인 성공 시 리다이렉트
-- [ ] 에러 메시지 반환
+- [x] Supabase Auth 연동
+- [x] 로그인 성공 시 리다이렉트
+- [x] 에러 메시지 반환
 
 ---
 
 ### 4. Supabase 서버 클라이언트 설정
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `lib/supabase/server.ts`
 
 **요구사항:**
-- [ ] Server-side Supabase 클라이언트 생성
-- [ ] 쿠키 기반 세션 관리
+- [x] Server-side Supabase 클라이언트 생성
+- [x] 쿠키 기반 세션 관리
 
 **기본 구조:**
 
@@ -446,18 +446,18 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
 ```
 
 **완료 조건:**
-- [ ] Supabase 클라이언트 정상 생성
-- [ ] 쿠키 세션 동작
+- [x] Supabase 클라이언트 정상 생성
+- [x] 쿠키 세션 동작
 
 ---
 
 ### 5. Supabase 브라우저 클라이언트 설정
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `lib/supabase/client.ts`
 
 **요구사항:**
-- [ ] Client-side Supabase 클라이언트 생성 (필요시)
+- [x] Client-side Supabase 클라이언트 생성 (필요시)
 
 **기본 구조:**
 
@@ -473,18 +473,34 @@ export function createClient() {
 ```
 
 **완료 조건:**
-- [ ] 브라우저에서 Supabase 클라이언트 동작
+- [x] 브라우저에서 Supabase 클라이언트 동작
 
 ---
 
-### 6. Middleware 설정 (세션 갱신)
+### 6. Proxy 설정 (세션 갱신) - Next.js 16+
 
-**상태:** - [ ] 미완료
-**파일:** `middleware.ts`
+**상태:** - [x] 완료
+**파일:** `proxy.ts`
+
+> ⚠️ **Next.js 16 변경사항**: `middleware.ts`가 `proxy.ts`로 이름이 변경되었습니다.
+> - 파일명: `middleware.ts` → `proxy.ts`
+> - 함수명: `middleware()` → `proxy()`
+> - 런타임: Edge Runtime 지원 안됨, Node.js 런타임만 사용
+> - 참고: [Next.js 16 Upgrade Guide](https://nextjs.org/docs/app/guides/upgrading/version-16)
+
+**마이그레이션 방법:**
+
+```bash
+# 자동 마이그레이션 (권장)
+npx @next/codemod@canary upgrade latest
+
+# 수동 마이그레이션
+mv middleware.ts proxy.ts
+```
 
 **요구사항:**
-- [ ] 모든 요청에서 세션 갱신
-- [ ] Protected routes 처리
+- [x] 모든 요청에서 세션 갱신
+- [x] Protected routes 처리
 
 **기본 구조:**
 
@@ -492,7 +508,7 @@ export function createClient() {
 import { createServerClient } from "@supabase/ssr"
 import { NextResponse, type NextRequest } from "next/server"
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   let supabaseResponse = NextResponse.next({
     request,
   })
@@ -548,15 +564,15 @@ export const config = {
 ```
 
 **완료 조건:**
-- [ ] 세션 갱신 동작
-- [ ] Protected routes 리다이렉트 동작
+- [x] 세션 갱신 동작
+- [x] Protected routes 리다이렉트 동작
 
 ---
 
 ## 구현 순서
 
 1. **Supabase 설정** - 환경 변수, 서버/클라이언트 설정
-2. **Middleware 설정** - 세션 갱신, Protected routes
+2. **Proxy 설정** - 세션 갱신, Protected routes (Next.js 16+)
 3. **Server Action 구현** - `login` 함수
 4. **LoginForm 컴포넌트** - 기본 버전 또는 react-hook-form 버전
 5. **Login Page 조립** - `app/login/page.tsx`
@@ -567,30 +583,30 @@ export const config = {
 ## 검증 체크리스트
 
 ### LoginForm
-- [ ] Email 입력 필드 동작
-- [ ] Password 입력 필드 동작
-- [ ] 폼 제출 동작
-- [ ] 로딩 상태 표시 (스피너)
-- [ ] 에러 메시지 표시
-- [ ] 유효성 검사 동작 (react-hook-form 버전)
+- [x] Email 입력 필드 동작
+- [x] Password 입력 필드 동작
+- [x] 폼 제출 동작
+- [x] 로딩 상태 표시 (스피너)
+- [x] 에러 메시지 표시
+- [x] 유효성 검사 동작 (react-hook-form 버전)
 
 ### Login Page
-- [ ] AuthCard 레이아웃 정상 표시
-- [ ] Logo 표시
-- [ ] "Welcome back" 제목 표시
-- [ ] Footer 링크 동작 (Sign up, Forgot password)
-- [ ] 이미 로그인된 사용자 리다이렉트
+- [x] AuthCard 레이아웃 정상 표시
+- [x] Logo 표시
+- [x] "Welcome back" 제목 표시
+- [x] Footer 링크 동작 (Sign up, Forgot password)
+- [x] 이미 로그인된 사용자 리다이렉트
 
 ### Server Action
-- [ ] Supabase Auth 연동
-- [ ] 로그인 성공 시 `/dashboard` 리다이렉트
-- [ ] 잘못된 이메일/비밀번호 에러 처리
-- [ ] 존재하지 않는 사용자 에러 처리
+- [x] Supabase Auth 연동
+- [x] 로그인 성공 시 `/dashboard` 리다이렉트
+- [x] 잘못된 이메일/비밀번호 에러 처리
+- [x] 존재하지 않는 사용자 에러 처리
 
 ### Supabase Integration
-- [ ] 서버 클라이언트 동작
-- [ ] 쿠키 세션 저장
-- [ ] Middleware 세션 갱신
+- [x] 서버 클라이언트 동작
+- [x] 쿠키 세션 저장
+- [x] Proxy 세션 갱신 (Next.js 16+)
 
 ---
 
@@ -610,7 +626,7 @@ lib/
     ├── server.ts             # Server-side Supabase 클라이언트
     └── client.ts             # Client-side Supabase 클라이언트
 
-middleware.ts                 # 세션 갱신 및 Protected routes
+proxy.ts                      # 세션 갱신 및 Protected routes (Next.js 16+)
 ```
 
 ---
@@ -689,10 +705,10 @@ middleware.ts                 # 세션 갱신 및 Protected routes
 ## 보안 고려사항
 
 - [ ] HTTPS 사용 (production)
-- [ ] CSRF 토큰 (Supabase에서 자동 처리)
-- [ ] Rate limiting (Supabase에서 자동 처리)
-- [ ] Password 필드 autocomplete="current-password"
-- [ ] 에러 메시지에서 구체적인 정보 노출 금지
+- [x] CSRF 토큰 (Supabase에서 자동 처리)
+- [x] Rate limiting (Supabase에서 자동 처리)
+- [x] Password 필드 autocomplete="current-password"
+- [x] 에러 메시지에서 구체적인 정보 노출 금지
 
 ---
 
