@@ -49,3 +49,44 @@ export function calculateReadTime(content: string | null | undefined, wordsPerMi
   const words = content.trim().split(/\s+/).filter(Boolean).length
   return Math.max(1, Math.ceil(words / wordsPerMinute))
 }
+
+/**
+ * Generate a URL-friendly slug from a title
+ * @example generateSlug("Hello World") // "hello-world-abc123"
+ */
+export function generateSlug(title: string): string {
+  return title
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9가-힣\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-')
+    .substring(0, 50)
+    + '-' + Date.now().toString(36)
+}
+
+/**
+ * Format a date as relative time (e.g., "just now", "2 minutes ago")
+ * @example formatRelativeTime(new Date()) // "just now"
+ */
+export function formatRelativeTime(date: Date): string {
+  const now = new Date()
+  const diffInSeconds = Math.floor((now.getTime() - date.getTime()) / 1000)
+
+  if (diffInSeconds < 60) {
+    return 'just now'
+  }
+
+  const diffInMinutes = Math.floor(diffInSeconds / 60)
+  if (diffInMinutes < 60) {
+    return `${diffInMinutes} minute${diffInMinutes > 1 ? 's' : ''} ago`
+  }
+
+  const diffInHours = Math.floor(diffInMinutes / 60)
+  if (diffInHours < 24) {
+    return `${diffInHours} hour${diffInHours > 1 ? 's' : ''} ago`
+  }
+
+  const diffInDays = Math.floor(diffInHours / 24)
+  return `${diffInDays} day${diffInDays > 1 ? 's' : ''} ago`
+}

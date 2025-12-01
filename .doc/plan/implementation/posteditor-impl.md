@@ -66,13 +66,13 @@ npm install @uiw/react-md-editor
 
 ### 0. 라우트 구조 설정
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `app/dashboard/(editor)/` 디렉토리 구조
 
 **요구사항:**
-- [ ] `app/dashboard/new/page.tsx` - 새 글 작성
-- [ ] `app/dashboard/edit/[id]/page.tsx` - 글 수정
-- [ ] `app/dashboard/(editor)/` - 공유 에디터 컴포넌트
+- [x] `app/dashboard/new/page.tsx` - 새 글 작성
+- [x] `app/dashboard/edit/[id]/page.tsx` - 글 수정
+- [x] `app/dashboard/(editor)/` - 공유 에디터 컴포넌트
 
 **파일 구조:**
 
@@ -93,22 +93,22 @@ app/dashboard/
 ```
 
 **완료 조건:**
-- [ ] 디렉토리 구조 생성
-- [ ] 라우트 접근 가능
+- [x] 디렉토리 구조 생성
+- [x] 라우트 접근 가능
 
 ---
 
 ### 1. PostEditor 메인 컴포넌트
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `app/dashboard/(editor)/PostEditor.tsx`
 
 **요구사항:**
-- [ ] Client Component ("use client")
-- [ ] create/edit 모드 지원
-- [ ] 제목, 내용 상태 관리
-- [ ] 저장/발행 핸들러
-- [ ] 2-column split 레이아웃
+- [x] Client Component ("use client")
+- [x] create/edit 모드 지원
+- [x] 제목, 내용 상태 관리
+- [x] 저장/발행 핸들러
+- [x] 2-column split 레이아웃
 - [ ] 마지막 저장 시간 표시
 
 **Props Interface:**
@@ -240,23 +240,23 @@ export function PostEditor({ mode, initialData }: PostEditorProps) {
 ```
 
 **완료 조건:**
-- [ ] create/edit 모드 전환
-- [ ] 상태 관리 동작
-- [ ] 2-column 레이아웃
-- [ ] Server Action 연결
+- [x] create/edit 모드 전환
+- [x] 상태 관리 동작
+- [x] 2-column 레이아웃
+- [x] Server Action 연결
 
 ---
 
 ### 2. EditorHeader 컴포넌트
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `app/dashboard/(editor)/EditorHeader.tsx`
 
 **요구사항:**
-- [ ] 뒤로가기 링크 (← Dashboard)
-- [ ] 저장 상태 표시 ("Saving...", "Saved just now")
-- [ ] Save Draft 버튼 (secondary)
-- [ ] Publish 버튼 (primary, loading 상태)
+- [x] 뒤로가기 링크 (← Dashboard)
+- [x] 저장 상태 표시 ("Saving...", "Saved just now")
+- [x] Save Draft 버튼 (secondary)
+- [x] Publish 버튼 (primary, loading 상태)
 
 **Props Interface:**
 
@@ -349,22 +349,22 @@ export function EditorHeader({
 ```
 
 **완료 조건:**
-- [ ] 뒤로가기 링크 동작
-- [ ] 저장 상태 표시
-- [ ] 버튼 동작 및 loading 상태
+- [x] 뒤로가기 링크 동작
+- [x] 저장 상태 표시
+- [x] 버튼 동작 및 loading 상태
 
 ---
 
 ### 3. TitleInput 컴포넌트
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `app/dashboard/(editor)/TitleInput.tsx`
 
 **요구사항:**
-- [ ] 큰 폰트 (text-3xl ~ text-5xl)
-- [ ] 테두리 없음 (borderless)
-- [ ] 포커스 링 없음
-- [ ] Placeholder: "Your Post Title..."
+- [x] 큰 폰트 (text-3xl ~ text-5xl)
+- [x] 테두리 없음 (borderless)
+- [x] 포커스 링 없음
+- [x] Placeholder: "Your Post Title..."
 
 **Props Interface:**
 
@@ -408,21 +408,21 @@ export function TitleInput({ value, onChange }: TitleInputProps) {
 ```
 
 **완료 조건:**
-- [ ] 입력 동작
-- [ ] 스타일 적용 (큰 폰트, 테두리 없음)
-- [ ] Placeholder 표시
+- [x] 입력 동작
+- [x] 스타일 적용 (큰 폰트, 테두리 없음)
+- [x] Placeholder 표시
 
 ---
 
 ### 4. EditorToolbar 컴포넌트
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `app/dashboard/(editor)/EditorToolbar.tsx`
 
 **요구사항:**
-- [ ] Markdown 서식 버튼 (Bold, Italic, Heading, Link, Code, Image)
-- [ ] Lucide 아이콘 사용
-- [ ] 클릭 시 action 콜백 호출
+- [x] Markdown 서식 버튼 (Bold, Italic, Heading, Link, Code, Image)
+- [x] Lucide 아이콘 사용
+- [x] 클릭 시 action 콜백 호출
 
 **Props Interface:**
 
@@ -486,22 +486,22 @@ export function EditorToolbar({ onAction }: EditorToolbarProps) {
 ```
 
 **완료 조건:**
-- [ ] 아이콘 버튼 렌더링
-- [ ] 클릭 시 action 콜백
-- [ ] hover 스타일
+- [x] 아이콘 버튼 렌더링
+- [x] 클릭 시 action 콜백
+- [x] hover 스타일
 
 ---
 
 ### 5. MarkdownEditor 컴포넌트
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `app/dashboard/(editor)/MarkdownEditor.tsx`
 
 **요구사항:**
-- [ ] Textarea (flex-1, 남은 공간 채우기)
-- [ ] Monospace 폰트
-- [ ] Placeholder: "Start writing your story using Markdown..."
-- [ ] 자동 높이 조절 (선택적)
+- [x] Textarea (flex-1, 남은 공간 채우기)
+- [x] Monospace 폰트
+- [x] Placeholder: "Start writing your story using Markdown..."
+- [x] 자동 높이 조절 (선택적)
 
 **Props Interface:**
 
@@ -557,23 +557,23 @@ export function MarkdownEditor({ value, onChange }: MarkdownEditorProps) {
 ```
 
 **완료 조건:**
-- [ ] 입력 동작
-- [ ] Monospace 폰트
-- [ ] Placeholder 표시
-- [ ] 자동 높이 조절
+- [x] 입력 동작
+- [x] Monospace 폰트
+- [x] Placeholder 표시
+- [x] 자동 높이 조절
 
 ---
 
 ### 6. MarkdownPreview 컴포넌트
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `app/dashboard/(editor)/MarkdownPreview.tsx`
 
 **요구사항:**
-- [ ] 우측 패널 (md 이상에서만 표시)
-- [ ] 제목 미리보기
-- [ ] Markdown → HTML 렌더링
-- [ ] 프로즈 스타일 (typography)
+- [x] 우측 패널 (md 이상에서만 표시)
+- [x] 제목 미리보기
+- [x] Markdown → HTML 렌더링
+- [x] 프로즈 스타일 (typography)
 
 **Props Interface:**
 
@@ -640,21 +640,21 @@ module.exports = {
 ```
 
 **완료 조건:**
-- [ ] 모바일에서 숨김
-- [ ] Markdown 렌더링
-- [ ] 프로즈 스타일 적용
+- [x] 모바일에서 숨김
+- [x] Markdown 렌더링
+- [x] 프로즈 스타일 적용
 
 ---
 
 ### 7. New Post Page
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `app/dashboard/new/page.tsx`
 
 **요구사항:**
-- [ ] Server Component
-- [ ] 인증 확인 (비로그인 시 /login 리다이렉트)
-- [ ] PostEditor (mode="create") 렌더링
+- [x] Server Component
+- [x] 인증 확인 (비로그인 시 /login 리다이렉트)
+- [x] PostEditor (mode="create") 렌더링
 
 **기본 구조:**
 
@@ -682,22 +682,22 @@ export default async function NewPostPage() {
 ```
 
 **완료 조건:**
-- [ ] 페이지 접근 가능 (`/dashboard/new`)
-- [ ] 인증 확인 동작
-- [ ] PostEditor 렌더링
+- [x] 페이지 접근 가능 (`/dashboard/new`)
+- [x] 인증 확인 동작
+- [x] PostEditor 렌더링
 
 ---
 
 ### 8. Edit Post Page
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `app/dashboard/edit/[id]/page.tsx`
 
 **요구사항:**
-- [ ] Server Component
-- [ ] 인증 확인
-- [ ] 포스트 데이터 로드
-- [ ] 권한 확인 (본인 글만 수정 가능)
+- [x] Server Component
+- [x] 인증 확인
+- [x] 포스트 데이터 로드
+- [x] 권한 확인 (본인 글만 수정 가능)
 - [ ] PostEditor (mode="edit") 렌더링
 
 **기본 구조:**
@@ -752,23 +752,23 @@ export default async function EditPostPage({ params }: PageProps) {
 ```
 
 **완료 조건:**
-- [ ] 페이지 접근 가능 (`/dashboard/edit/[id]`)
-- [ ] 기존 데이터 로드
-- [ ] 권한 확인 동작
-- [ ] notFound 처리
+- [x] 페이지 접근 가능 (`/dashboard/edit/[id]`)
+- [x] 기존 데이터 로드
+- [x] 권한 확인 동작
+- [x] notFound 처리
 
 ---
 
 ### 9. Server Actions (Posts)
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `actions/posts.ts`
 
 **요구사항:**
-- [ ] createPost(title, content) - 새 포스트 생성
-- [ ] updatePost(id, title, content) - 포스트 수정
-- [ ] publishPost(id) - 발행 (status 변경, slug 생성)
-- [ ] getPostById(id) - 단일 포스트 조회
+- [x] createPost(title, content) - 새 포스트 생성
+- [x] updatePost(id, title, content) - 포스트 수정
+- [x] publishPost(id) - 발행 (status 변경, slug 생성)
+- [x] getPostById(id) - 단일 포스트 조회
 
 **기본 구조:**
 
@@ -924,21 +924,21 @@ export async function getPostById(id: string): Promise<Post | null> {
 ```
 
 **완료 조건:**
-- [ ] createPost 동작
-- [ ] updatePost 동작
-- [ ] publishPost 동작 (slug 생성)
-- [ ] getPostById 동작
+- [x] createPost 동작
+- [x] updatePost 동작
+- [x] publishPost 동작 (slug 생성)
+- [x] getPostById 동작
 
 ---
 
 ### 10. 유틸리티 함수 추가
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `lib/utils.ts`
 
 **요구사항:**
-- [ ] generateSlug - 제목에서 slug 생성
-- [ ] formatRelativeTime - 상대적 시간 표시 ("just now", "2 minutes ago")
+- [x] generateSlug - 제목에서 slug 생성
+- [x] formatRelativeTime - 상대적 시간 표시 ("just now", "2 minutes ago")
 
 **기본 구조:**
 
@@ -986,8 +986,8 @@ export function formatRelativeTime(date: Date): string {
 ```
 
 **완료 조건:**
-- [ ] generateSlug: URL-safe slug 생성
-- [ ] formatRelativeTime: 상대 시간 표시
+- [x] generateSlug: URL-safe slug 생성
+- [x] formatRelativeTime: 상대 시간 표시
 
 ---
 
@@ -1037,38 +1037,38 @@ lib/
 ## 검증 체크리스트
 
 ### PostEditor
-- [ ] create 모드 동작
-- [ ] edit 모드 동작 (기존 데이터 로드)
-- [ ] 제목/내용 상태 관리
-- [ ] 2-column 레이아웃 (모바일에서 에디터만)
+- [x] create 모드 동작
+- [x] edit 모드 동작 (기존 데이터 로드)
+- [x] 제목/내용 상태 관리
+- [x] 2-column 레이아웃 (모바일에서 에디터만)
 
 ### EditorHeader
-- [ ] 뒤로가기 링크 → /dashboard
-- [ ] 저장 상태 표시
-- [ ] Save Draft 버튼 동작
-- [ ] Publish 버튼 동작 + loading
+- [x] 뒤로가기 링크 → /dashboard
+- [x] 저장 상태 표시
+- [x] Save Draft 버튼 동작
+- [x] Publish 버튼 동작 + loading
 
 ### MarkdownEditor
-- [ ] 입력 동작
-- [ ] Placeholder 표시
-- [ ] Monospace 폰트
+- [x] 입력 동작
+- [x] Placeholder 표시
+- [x] Monospace 폰트
 
 ### MarkdownPreview
-- [ ] 모바일에서 숨김
-- [ ] Markdown → HTML 렌더링
-- [ ] 실시간 업데이트
+- [x] 모바일에서 숨김
+- [x] Markdown → HTML 렌더링
+- [x] 실시간 업데이트
 
 ### Server Actions
-- [ ] createPost: 새 포스트 생성
-- [ ] updatePost: 포스트 수정
-- [ ] publishPost: 발행 + slug 생성
-- [ ] 권한 확인 (본인 글만)
+- [x] createPost: 새 포스트 생성
+- [x] updatePost: 포스트 수정
+- [x] publishPost: 발행 + slug 생성
+- [x] 권한 확인 (본인 글만)
 
 ### 공통
-- [ ] 인증 보호 동작
-- [ ] 다크모드 지원
-- [ ] 반응형 레이아웃
-- [ ] TypeScript 타입 에러 없음
+- [x] 인증 보호 동작
+- [x] 다크모드 지원
+- [x] 반응형 레이아웃
+- [x] TypeScript 타입 에러 없음
 
 ---
 

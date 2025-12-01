@@ -120,9 +120,6 @@ export async function getMyPosts(): Promise<Post[]> {
   }))
 }
 
-/**
- * Delete a post
- */
 export async function deletePost(id: string): Promise<void> {
   const supabase = await createClient()
   const { error } = await supabase
@@ -135,3 +132,161 @@ export async function deletePost(id: string): Promise<void> {
     throw error
   }
 }
+
+/**
+ * Create a new post (draft)
+ */
+interface CreatePostInput {
+  title: string;
+  content: string;
+}
+
+export async function createPost({ title, content }: CreatePostInput) {
+  const supabase = await createClient()
+  const { data: { user } } = await supabase.auth.getUser()
+
+  if (!user) {
+    return { error: "Unauthorized" }
+  }
+
+  const { generateSlug } = await import("@/lib/utils")
+  const slug = generateSlug(title)
+  const excerpt = content.slice(0, 150)
+
+  const { data: post, error } = await supabase
+    .from("blogs")
+    .insert({
+      author_id: user.id,
+      title,
+      slug,
+      content,
+      meta_description: excerpt,
+      status: 'draft',
+    })
+    .select()
+    .single()
+
+  if (error) {
+    return { error: error.message }
+  }
+
+  const { revalidatePath } = await import("next/cache")
+  revalidatePath("/dashboard")
+  return { post }
+}
+
+/**
+ * Update an existing post
+ */
+interface UpdatePostInput {
+  id: string;
+  title: string;
+  content: string;
+}
+
+export async function updatePost({ id, title, content }: UpdatePostInput) {
+  const supabase = await createClient()
+  const { data: { user } } = await supabase.auth.getUser()
+
+  if (!user) {
+    return { error: "Unauthorized" }
+  }
+
+  const excerpt = content.slice(0, 150)
+
+  const { data: post, error } = await supabase
+    .from("blogs")
+    .update({
+      title,
+      content,
+      meta_description: excerpt,
+      updated_at: new Date().toISOString(),
+    })
+    .eq("id", id)
+    .eq("author_id", user.id)
+    .select()
+    .single()
+
+  if (error) {
+    return { error: error.message }
+  }
+
+  const { revalidatePath } = await import("next/cache")
+  revalidatePath("/dashboard")
+  return { post }
+}
+
+/**
+ * Publish a post (change status to published)
+ */
+export async function publishPost(id: string) {
+  const supabase = await createClient()
+  const { data: { user } } = await supabase.auth.getUser()
+
+  if (!user) {
+    return { error: "Unauthorized" }
+  }
+
+  // First get the post to generate slug if needed
+  const { data: existingPost } = await supabase
+    .from("blogs")
+    .select("title, slug")
+    .eq("id", id)
+    .single()
+
+  const { generateSlug } = await import("@/lib/utils")
+  const slug = existingPost?.slug || generateSlug(existingPost?.title || '')
+
+  const { data: post, error } = await supabase
+    .from("blogs")
+    .update({
+      status: 'published',
+      slug,
+      published_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
+    })
+    .eq("id", id)
+    .eq("author_id", user.id)
+    .select()
+    .single()
+
+  if (error) {
+    return { error: error.message }
+  }
+
+  const { revalidatePath } = await import("next/cache")
+  revalidatePath("/dashboard")
+  revalidatePath("/blog")
+  return { post }
+}
+
+/**
+ * Get a single post by ID (for editing)
+ */
+export async function getPostById(id: string): Promise<Post | null> {
+  const supabase = await createClient()
+
+  const { data: post, error } = await supabase
+    .from("blogs")
+    .select("*")
+    .eq("id", id)
+    .single()
+
+  if (error || !post) {
+    return null
+  }
+
+  return {
+    id: post.id,
+    title: post.title,
+    slug: post.slug,
+    content: post.content,
+    excerpt: post.meta_description,
+    status: post.status as "draft" | "published",
+    author_id: post.author_id,
+    created_at: new Date(post.created_at),
+    updated_at: new Date(post.updated_at),
+    published_at: post.published_at ? new Date(post.published_at) : null,
+  }
+}
+
