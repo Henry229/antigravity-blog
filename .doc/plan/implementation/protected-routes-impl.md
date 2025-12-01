@@ -47,12 +47,12 @@ Next.js 16+에서는 `proxy.ts`가 표준이므로, 기존 `proxy.ts`에 추가 
 
 ### 1. proxy.ts 확장 (인증 라우트 리다이렉트 추가)
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `proxy.ts`
 
 **요구사항:**
-- [ ] 인증된 사용자가 `/login`, `/signup` 접근 시 `/dashboard`로 리다이렉트
-- [ ] `redirectTo` 쿼리 파라미터 추가 (로그인 후 원래 페이지 복귀용)
+- [x] 인증된 사용자가 `/login`, `/signup` 접근 시 `/dashboard`로 리다이렉트
+- [x] `redirectTo` 쿼리 파라미터 추가 (로그인 후 원래 페이지 복귀용)
 
 **기본 구조:**
 
@@ -123,35 +123,35 @@ export const config = {
 ```
 
 **완료 조건:**
-- [ ] 미인증 사용자 → 보호 라우트 접근 시 `/login` 리다이렉트
-- [ ] 인증 사용자 → `/login`, `/signup` 접근 시 `/dashboard` 리다이렉트
-- [ ] `redirectTo` 쿼리 파라미터 전달
+- [x] 미인증 사용자 → 보호 라우트 접근 시 `/login` 리다이렉트
+- [x] 인증 사용자 → `/login`, `/signup` 접근 시 `/dashboard` 리다이렉트
+- [x] `redirectTo` 쿼리 파라미터 전달
 
 ---
 
 ### 2. middleware.ts 삭제
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `middleware.ts`
 
 **요구사항:**
-- [ ] 레거시 `middleware.ts` 파일 삭제
+- [x] 레거시 `middleware.ts` 파일 삭제
 
 **완료 조건:**
-- [ ] 파일 삭제됨
-- [ ] 빌드 에러 없음
+- [x] 파일 삭제됨
+- [x] 빌드 에러 없음
 
 ---
 
 ### 3. 로그인 후 원래 페이지로 복귀
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `app/login/page.tsx`, `app/login/LoginForm.tsx`
 
 **요구사항:**
-- [ ] URL에서 `redirectTo` 파라미터 읽기
-- [ ] 로그인 성공 시 해당 URL로 이동
-- [ ] 파라미터 없으면 기본값 `/dashboard`
+- [x] URL에서 `redirectTo` 파라미터 읽기
+- [x] 로그인 성공 시 해당 URL로 이동
+- [x] 파라미터 없으면 기본값 `/dashboard`
 
 **page.tsx 수정:**
 
@@ -187,22 +187,22 @@ export function LoginForm({ loginAction, redirectTo }: LoginFormProps) {
 ```
 
 **완료 조건:**
-- [ ] `redirectTo` 파라미터 정상 전달
-- [ ] 로그인 성공 시 원래 페이지로 이동
-- [ ] 파라미터 없으면 대시보드로 이동
+- [x] `redirectTo` 파라미터 정상 전달
+- [x] 로그인 성공 시 원래 페이지로 이동
+- [x] 파라미터 없으면 대시보드로 이동
 
 ---
 
 ### 4. Signup도 동일하게 적용
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `app/signup/page.tsx`, `app/signup/SignupForm.tsx`
 
 **요구사항:**
-- [ ] Login과 동일하게 `redirectTo` 처리
+- [x] Login과 동일하게 `redirectTo` 처리
 
 **완료 조건:**
-- [ ] 회원가입 성공 시 원래 페이지로 이동
+- [x] 회원가입 성공 시 원래 페이지로 이동
 
 ---
 

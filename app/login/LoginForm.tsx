@@ -23,9 +23,19 @@ type LoginFormData = z.infer<typeof loginSchema>
 
 interface LoginFormProps {
   loginAction: (formData: FormData) => Promise<{ error?: string; success?: boolean }>
+  redirectTo?: string
 }
 
-export function LoginForm({ loginAction }: LoginFormProps) {
+function getSafeRedirectUrl(redirectTo?: string): string {
+  if (!redirectTo) return "/dashboard"
+  // Only allow internal paths starting with / and not protocol URLs
+  if (redirectTo.startsWith("/") && !redirectTo.startsWith("//")) {
+    return redirectTo
+  }
+  return "/dashboard"
+}
+
+export function LoginForm({ loginAction, redirectTo }: LoginFormProps) {
   const router = useRouter()
   const [serverError, setServerError] = useState<string | null>(null)
 
@@ -51,7 +61,7 @@ export function LoginForm({ loginAction }: LoginFormProps) {
       return
     }
 
-    router.push("/dashboard")
+    router.push(getSafeRedirectUrl(redirectTo))
     router.refresh()
   }
 

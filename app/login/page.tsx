@@ -1,6 +1,4 @@
 import { Metadata } from "next"
-import { redirect } from "next/navigation"
-import { createClient } from "@/lib/supabase/server"
 import { AuthCard } from "@/components/layout/AuthCard"
 import { LoginForm } from "./LoginForm"
 import { login } from "@/actions/auth"
@@ -11,14 +9,12 @@ export const metadata: Metadata = {
   description: "Sign in to your SimpleBlog account",
 }
 
-export default async function LoginPage() {
-  // Check if user is already logged in
-  const supabase = await createClient()
-  const { data: { user } } = await supabase.auth.getUser()
-
-  if (user) {
-    redirect("/dashboard")
-  }
+export default async function LoginPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ redirectTo?: string }>
+}) {
+  const { redirectTo } = await searchParams
 
   return (
     <AuthCard
@@ -40,7 +36,7 @@ export default async function LoginPage() {
         </div>
       }
     >
-      <LoginForm loginAction={login} />
+      <LoginForm loginAction={login} redirectTo={redirectTo} />
     </AuthCard>
   )
 }

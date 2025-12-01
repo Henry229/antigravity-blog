@@ -7,9 +7,19 @@ import { Button } from "@/components/ui/Button"
 
 interface SignupFormProps {
   signupAction: (formData: FormData) => Promise<{ error?: string; success?: boolean }>
+  redirectTo?: string
 }
 
-export function SignupForm({ signupAction }: SignupFormProps) {
+function getSafeRedirectUrl(redirectTo?: string): string {
+  if (!redirectTo) return "/dashboard"
+  // Only allow internal paths starting with / and not protocol URLs
+  if (redirectTo.startsWith("/") && !redirectTo.startsWith("//")) {
+    return redirectTo
+  }
+  return "/dashboard"
+}
+
+export function SignupForm({ signupAction, redirectTo }: SignupFormProps) {
   const router = useRouter()
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
@@ -41,7 +51,7 @@ export function SignupForm({ signupAction }: SignupFormProps) {
       setError(result.error)
       setLoading(false)
     } else {
-      router.push("/dashboard")
+      router.push(getSafeRedirectUrl(redirectTo))
       router.refresh()
     }
   }
