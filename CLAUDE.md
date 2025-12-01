@@ -2,6 +2,13 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Important
+- ALWAYS use Shadcn MCP to create UI
+- ALWAYS ask user for permission when implementing a plan
+- NEVER use emoji for design
+- ALWAYS prioritize server components over client components.
+- nextjs version 16 이상에서는 middleware.ts 대신 proxy.ts를 사용한다.
+
 ## Commands
 
 ```bash

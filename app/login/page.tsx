@@ -3,6 +3,7 @@ import { redirect } from "next/navigation"
 import { createClient } from "@/lib/supabase/server"
 import { AuthCard } from "@/components/layout/AuthCard"
 import { LoginForm } from "./LoginForm"
+import { login } from "@/actions/auth"
 import Link from "next/link"
 
 export const metadata: Metadata = {
@@ -39,7 +40,7 @@ export default async function LoginPage() {
         </div>
       }
     >
-      <LoginForm />
+      <LoginForm loginAction={login} />
     </AuthCard>
   )
 }

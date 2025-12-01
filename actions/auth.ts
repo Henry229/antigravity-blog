@@ -2,6 +2,39 @@
 
 import { createClient } from "@/lib/supabase/server"
 
+export async function signup(formData: FormData) {
+  const email = formData.get("email")
+  const password = formData.get("password")
+
+  if (!email || typeof email !== "string" || !password || typeof password !== "string") {
+    return { error: "Invalid input" }
+  }
+
+  if (!email.includes("@")) {
+    return { error: "Please enter a valid email address" }
+  }
+
+  if (password.length < 6) {
+    return { error: "Password must be at least 6 characters" }
+  }
+
+  const supabase = await createClient()
+
+  const { error } = await supabase.auth.signUp({
+    email,
+    password,
+  })
+
+  if (error) {
+    if (error.message.includes("already registered")) {
+      return { error: "An account with this email already exists" }
+    }
+    return { error: error.message }
+  }
+
+  return { success: true }
+}
+
 export async function login(formData: FormData) {
   // 서버 측 입력값 검증
   const email = formData.get("email")

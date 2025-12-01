@@ -7,7 +7,6 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { z } from "zod"
 import { Input } from "@/components/ui/Input"
 import { Button } from "@/components/ui/Button"
-import { login } from "@/actions/auth"
 
 const loginSchema = z.object({
   email: z
@@ -22,7 +21,11 @@ const loginSchema = z.object({
 
 type LoginFormData = z.infer<typeof loginSchema>
 
-export function LoginForm() {
+interface LoginFormProps {
+  loginAction: (formData: FormData) => Promise<{ error?: string; success?: boolean }>
+}
+
+export function LoginForm({ loginAction }: LoginFormProps) {
   const router = useRouter()
   const [serverError, setServerError] = useState<string | null>(null)
 
@@ -41,14 +44,13 @@ export function LoginForm() {
     formData.append("email", data.email)
     formData.append("password", data.password)
 
-    const result = await login(formData)
+    const result = await loginAction(formData)
 
     if (result.error) {
       setServerError(result.error)
       return
     }
 
-    // 로그인 성공 시 클라이언트에서 리다이렉트
     router.push("/dashboard")
     router.refresh()
   }

@@ -60,14 +60,14 @@ npm install @supabase/supabase-js @supabase/ssr
 
 ### 0. 페이지 라우트 생성
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `app/signup/page.tsx`
 
 **요구사항:**
-- [ ] `app/signup/page.tsx` 생성
-- [ ] metadata 설정 (title, description)
-- [ ] Server Component로 인증 상태 확인
-- [ ] 이미 로그인된 경우 `/dashboard`로 리다이렉트
+- [x] `app/signup/page.tsx` 생성
+- [x] metadata 설정 (title, description)
+- [x] Server Component로 인증 상태 확인
+- [x] 이미 로그인된 경우 `/dashboard`로 리다이렉트
 
 **기본 구조:**
 
@@ -115,27 +115,27 @@ export default async function SignupPage() {
 ```
 
 **완료 조건:**
-- [ ] 페이지 접근 가능 (`/signup`)
-- [ ] 메타데이터 설정 완료
-- [ ] 로그인된 사용자 리다이렉트
+- [x] 페이지 접근 가능 (`/signup`)
+- [x] 메타데이터 설정 완료
+- [x] 로그인된 사용자 리다이렉트
 
 ---
 
 ### 1. SignupForm 컴포넌트
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `app/signup/SignupForm.tsx`
 
 **요구사항:**
-- [ ] Client Component ("use client")
-- [ ] 이메일 입력 필드
-- [ ] 비밀번호 입력 필드
-- [ ] 비밀번호 확인 입력 필드
-- [ ] 비밀번호 일치 검증 (클라이언트)
-- [ ] 제출 버튼 ("Create Account")
-- [ ] 로딩 상태 표시
-- [ ] 에러 메시지 표시
-- [ ] Server Action 연결
+- [x] Client Component ("use client")
+- [x] 이메일 입력 필드
+- [x] 비밀번호 입력 필드
+- [x] 비밀번호 확인 입력 필드
+- [x] 비밀번호 일치 검증 (클라이언트)
+- [x] 제출 버튼 ("Create Account")
+- [x] 로딩 상태 표시
+- [x] 에러 메시지 표시
+- [x] Server Action 연결
 
 **Props Interface:**
 
@@ -248,23 +248,23 @@ export function SignupForm() {
 ```
 
 **완료 조건:**
-- [ ] 모든 입력 필드 정상 동작
-- [ ] 비밀번호 불일치 시 에러 표시
-- [ ] 로딩 상태에서 버튼 비활성화 + spinner
-- [ ] 에러 메시지 표시
+- [x] 모든 입력 필드 정상 동작
+- [x] 비밀번호 불일치 시 에러 표시
+- [x] 로딩 상태에서 버튼 비활성화 + spinner
+- [x] 에러 메시지 표시
 
 ---
 
 ### 2. Signup Server Action
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `actions/auth.ts`
 
 **요구사항:**
-- [ ] Server Action으로 구현 ("use server")
-- [ ] Supabase Auth `signUp` 호출
-- [ ] 에러 처리 및 반환
-- [ ] 이메일 확인 설정 (Supabase 설정에 따라)
+- [x] Server Action으로 구현 ("use server")
+- [x] Supabase Auth `signUp` 호출
+- [x] 에러 처리 및 반환
+- [x] 이메일 확인 설정 (Supabase 설정에 따라)
 
 **기본 구조:**
 
@@ -309,21 +309,21 @@ function getErrorMessage(error: string): string {
 ```
 
 **완료 조건:**
-- [ ] Supabase Auth 연동 성공
-- [ ] 에러 메시지 적절히 반환
-- [ ] 중복 이메일 처리
+- [x] Supabase Auth 연동 성공
+- [x] 에러 메시지 적절히 반환
+- [x] 중복 이메일 처리
 
 ---
 
 ### 3. Supabase 클라이언트 설정
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료 (기존 구현 활용)
 **파일:** `lib/supabase/server.ts`, `lib/supabase/client.ts`
 
 **요구사항:**
-- [ ] Server-side Supabase 클라이언트 생성
-- [ ] Cookie 기반 세션 관리
-- [ ] 환경변수 설정
+- [x] Server-side Supabase 클라이언트 생성
+- [x] Cookie 기반 세션 관리
+- [x] 환경변수 설정
 
 **lib/supabase/server.ts:**
 
@@ -378,20 +378,20 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
 ```
 
 **완료 조건:**
-- [ ] 환경변수 설정
-- [ ] Server/Client 클라이언트 생성 함수
-- [ ] Cookie 기반 세션 관리
+- [x] 환경변수 설정
+- [x] Server/Client 클라이언트 생성 함수
+- [x] Cookie 기반 세션 관리
 
 ---
 
 ### 4. Middleware 설정 (세션 갱신)
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `middleware.ts`
 
 **요구사항:**
-- [ ] 모든 요청에서 세션 갱신
-- [ ] Supabase Auth 토큰 자동 갱신
+- [x] 모든 요청에서 세션 갱신
+- [x] Supabase Auth 토큰 자동 갱신
 
 **기본 구조:**
 
@@ -440,8 +440,8 @@ export const config = {
 ```
 
 **완료 조건:**
-- [ ] 세션 자동 갱신 동작
-- [ ] 정적 파일 제외
+- [x] 세션 자동 갱신 동작
+- [x] 정적 파일 제외
 
 ---
 
@@ -496,31 +496,31 @@ middleware.ts                 # Session refresh middleware
 ## 검증 체크리스트
 
 ### SignupForm
-- [ ] 이메일 입력 동작
-- [ ] 비밀번호 입력 동작
-- [ ] 비밀번호 확인 입력 동작
-- [ ] 비밀번호 불일치 시 에러: "Passwords do not match"
-- [ ] 짧은 비밀번호 에러: "Password must be at least 6 characters"
-- [ ] 로딩 상태 spinner 표시
-- [ ] 제출 중 버튼 비활성화
+- [x] 이메일 입력 동작
+- [x] 비밀번호 입력 동작
+- [x] 비밀번호 확인 입력 동작
+- [x] 비밀번호 불일치 시 에러: "Passwords do not match"
+- [x] 짧은 비밀번호 에러: "Password must be at least 6 characters"
+- [x] 로딩 상태 spinner 표시
+- [x] 제출 중 버튼 비활성화
 
 ### Signup Page
-- [ ] AuthCard 레이아웃 표시
-- [ ] Logo 상단 표시
-- [ ] Footer 링크 → /login 이동
-- [ ] 로그인된 사용자 → /dashboard 리다이렉트
+- [x] AuthCard 레이아웃 표시
+- [x] Logo 상단 표시
+- [x] Footer 링크 → /login 이동
+- [x] 로그인된 사용자 → /dashboard 리다이렉트
 
 ### Server Action
-- [ ] Supabase signUp 호출
-- [ ] 성공 시 세션 생성
-- [ ] 중복 이메일 에러 처리
-- [ ] 네트워크 에러 처리
+- [x] Supabase signUp 호출
+- [x] 성공 시 세션 생성
+- [x] 중복 이메일 에러 처리
+- [x] 네트워크 에러 처리
 
 ### 공통
-- [ ] 다크모드 지원
-- [ ] 반응형 레이아웃 (모바일/데스크탑)
-- [ ] TypeScript 타입 에러 없음
-- [ ] 접근성 (label, autoComplete)
+- [x] 다크모드 지원
+- [x] 반응형 레이아웃 (모바일/데스크탑)
+- [x] TypeScript 타입 에러 없음
+- [x] 접근성 (label, autoComplete)
 
 ---
 
