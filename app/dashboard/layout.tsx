@@ -16,12 +16,12 @@ export default async function DashboardLayout({
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div className="flex min-h-screen bg-gray-50 dark:bg-gray-900">
       {/* Sidebar - fixed position */}
       <Sidebar />
 
       {/* Main Content - offset by sidebar width */}
-      <div className="flex flex-col md:ml-64">
+      <div className="flex-1 md:ml-64">
         {children}
       </div>
     </div>

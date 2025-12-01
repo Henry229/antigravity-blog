@@ -79,3 +79,36 @@ export function CardFooter({
     </div>
   )
 }
+
+export function CardTitle({
+  className,
+  children,
+  ...props
+}: React.HTMLAttributes<HTMLHeadingElement>) {
+  return (
+    <h3
+      className={cn(
+        "text-2xl font-semibold leading-none tracking-tight text-gray-900 dark:text-white",
+        className
+      )}
+      {...props}
+    >
+      {children}
+    </h3>
+  )
+}
+
+export function CardDescription({
+  className,
+  children,
+  ...props
+}: React.HTMLAttributes<HTMLParagraphElement>) {
+  return (
+    <p
+      className={cn("text-sm text-gray-500 dark:text-gray-400", className)}
+      {...props}
+    >
+      {children}
+    </p>
+  )
+}

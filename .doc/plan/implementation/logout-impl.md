@@ -22,14 +22,14 @@ SimpleBlog 로그아웃 기능 구현
 
 ### 1. Logout Server Action
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `actions/auth.ts`
 
 **요구사항:**
-- [ ] Server Action으로 구현 ("use server")
-- [ ] Supabase Auth `signOut` 호출
-- [ ] 세션 쿠키 제거
-- [ ] 에러 처리
+- [x] Server Action으로 구현 ("use server")
+- [x] Supabase Auth `signOut` 호출
+- [x] 세션 쿠키 제거
+- [x] 에러 처리
 
 **기본 구조:**
 
@@ -49,22 +49,22 @@ export async function logout() {
 ```
 
 **완료 조건:**
-- [ ] Supabase signOut 호출 성공
-- [ ] 세션 쿠키 제거됨
-- [ ] 에러 처리 완료
+- [x] Supabase signOut 호출 성공
+- [x] 세션 쿠키 제거됨
+- [x] 에러 처리 완료
 
 ---
 
 ### 2. 대시보드 헤더 로그아웃 버튼
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `app/dashboard/DashboardHeader.tsx`
 
 **요구사항:**
-- [ ] 사용자 아바타 클릭 시 드롭다운 메뉴
-- [ ] 로그아웃 버튼 포함
-- [ ] 로그아웃 시 로딩 상태 표시
-- [ ] 성공 시 `/login`으로 리다이렉트
+- [x] 사용자 아바타 클릭 시 드롭다운 메뉴
+- [x] 로그아웃 버튼 포함
+- [x] 로그아웃 시 로딩 상태 표시
+- [x] 성공 시 `/login`으로 리다이렉트
 
 **UI 구조:**
 
@@ -79,23 +79,23 @@ DashboardHeader
 ```
 
 **완료 조건:**
-- [ ] 드롭다운 메뉴 동작
-- [ ] 로그아웃 버튼 클릭 시 logout action 호출
-- [ ] 로딩 상태 표시
-- [ ] 성공 시 로그인 페이지로 이동
+- [x] 드롭다운 메뉴 동작
+- [x] 로그아웃 버튼 클릭 시 logout action 호출
+- [x] 로딩 상태 표시
+- [x] 성공 시 로그인 페이지로 이동
 
 ---
 
 ### 3. UserMenu 컴포넌트 (선택)
 
-**상태:** - [ ] 미완료
+**상태:** - [x] 완료
 **파일:** `app/dashboard/UserMenu.tsx`
 
 **요구사항:**
-- [ ] Client Component ("use client")
-- [ ] 아바타 + 드롭다운 메뉴
-- [ ] 외부 클릭 시 닫힘
-- [ ] logout action props로 전달받기
+- [x] Client Component ("use client")
+- [x] 아바타 + 드롭다운 메뉴
+- [x] 외부 클릭 시 닫힘
+- [x] logout action props로 전달받기
 
 **Props Interface:**
 
@@ -108,9 +108,9 @@ interface UserMenuProps {
 ```
 
 **완료 조건:**
-- [ ] 드롭다운 열림/닫힘 동작
-- [ ] 로그아웃 기능 정상 동작
-- [ ] 접근성 (키보드 네비게이션)
+- [x] 드롭다운 열림/닫힘 동작
+- [x] 로그아웃 기능 정상 동작
+- [x] 접근성 (키보드 네비게이션)
 
 ---
 
@@ -139,19 +139,19 @@ app/dashboard/
 ## 검증 체크리스트
 
 ### Logout Action
-- [ ] Supabase signOut 호출
-- [ ] 세션 쿠키 제거
-- [ ] 에러 처리
+- [x] Supabase signOut 호출
+- [x] 세션 쿠키 제거
+- [x] 에러 처리
 
 ### UserMenu
-- [ ] 드롭다운 열림/닫힘
-- [ ] 외부 클릭 시 닫힘
-- [ ] 로그아웃 버튼 동작
+- [x] 드롭다운 열림/닫힘
+- [x] 외부 클릭 시 닫힘
+- [x] 로그아웃 버튼 동작
 
 ### 통합
-- [ ] 로그아웃 후 `/login` 리다이렉트
-- [ ] 로그아웃 후 대시보드 접근 불가
-- [ ] 다크모드 지원
+- [x] 로그아웃 후 `/login` 리다이렉트
+- [x] 로그아웃 후 대시보드 접근 불가
+- [x] 다크모드 지원
 
 ---
 

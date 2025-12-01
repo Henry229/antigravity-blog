@@ -1,8 +1,9 @@
 import { createServerClient } from "@supabase/ssr"
 import { NextResponse, type NextRequest } from "next/server"
+import { authConfig } from "@/lib/auth.config"
 
-const protectedRoutes = ["/dashboard", "/posts"]
-const authRoutes = ["/login", "/signup"]
+const protectedRoutes = authConfig.protectedRoutes
+const authRoutes = authConfig.authRoutes
 
 export async function proxy(request: NextRequest) {
   let supabaseResponse = NextResponse.next({
@@ -39,13 +40,13 @@ export async function proxy(request: NextRequest) {
   const pathname = request.nextUrl.pathname
   const search = request.nextUrl.search
 
-  // Protected routes: unauthenticated → /login with redirectTo (including query string)
+  // Protected routes: unauthenticated → /auth/login with redirectTo (including query string)
   const isProtectedRoute = protectedRoutes.some((route) =>
     pathname.startsWith(route)
   )
   if (isProtectedRoute && !user) {
     const url = request.nextUrl.clone()
-    url.pathname = "/login"
+    url.pathname = authConfig.redirects.protectedRoute
     // Preserve both pathname and query string for full URL restoration
     const redirectPath = search ? `${pathname}${search}` : pathname
     url.searchParams.set("redirectTo", redirectPath)
@@ -56,7 +57,7 @@ export async function proxy(request: NextRequest) {
   const isAuthRoute = authRoutes.some((route) => pathname.startsWith(route))
   if (isAuthRoute && user) {
     const url = request.nextUrl.clone()
-    url.pathname = "/dashboard"
+    url.pathname = authConfig.redirects.afterLogin
     return NextResponse.redirect(url)
   }
 

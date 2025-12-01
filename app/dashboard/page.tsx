@@ -41,9 +41,12 @@ export default async function DashboardPage(props: PageProps) {
     : "All Posts"
 
   return (
-    <>
-      <DashboardHeader userAvatar={user?.user_metadata?.avatar_url} />
-      <main className="flex-1 p-6">
+    <div className="flex min-h-screen flex-col">
+      <DashboardHeader
+        userEmail={user?.email || ""}
+        userAvatar={user?.user_metadata?.avatar_url}
+      />
+      <main className="flex-1 p-6 pt-20">
         {/* Page Title */}
         <h1 className="mb-2 text-2xl font-bold text-gray-900 dark:text-white">
           {pageTitle}
@@ -62,6 +65,6 @@ export default async function DashboardPage(props: PageProps) {
           <EmptyState filter={status} />
         )}
       </main>
-    </>
+    </div>
   )
 }

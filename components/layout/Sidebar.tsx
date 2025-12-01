@@ -43,7 +43,7 @@ export function Sidebar({ currentFilter: currentFilterProp }: SidebarProps) {
   const currentFilter = currentFilterProp ?? (searchParams.get('status') || 'all')
 
   return (
-    <aside className="hidden w-64 flex-shrink-0 border-r border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-800 md:block">
+    <aside className="fixed left-0 top-0 hidden h-screen w-64 flex-shrink-0 border-r border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-800 md:block">
       {/* Logo */}
       <div className="flex h-16 items-center border-b border-gray-200 px-6 dark:border-gray-700">
         <Logo size="md" />
