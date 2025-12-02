@@ -1,27 +1,66 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Paper/Warm tones */
+  --paper: #FAF9F6;
+  --paper-dark: #f8f5f2;
+
+  /* Text colors */
+  --charcoal: #1c1917;
+  --stone-600: #57534e;
+  --stone-500: #78716c;
+  --stone-400: #a8a29e;
+
+  /* Accent - Burnt Orange */
+  --burnt: #D97706;
+  --burnt-hover: #b45309;
+  --orange-50: #fff7ed;
+  --orange-100: #ffedd5;
+  --orange-200: #fed7aa;
+  --orange-300: #fdba74;
+
+  /* Legacy support */
+  --background: #FAF9F6;
+  --foreground: #1c1917;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-primary: #4A90E2;
+  --color-primary: var(--burnt);
+  --color-paper: var(--paper);
+  --color-charcoal: var(--charcoal);
+  --color-burnt: var(--burnt);
+  --color-burnt-hover: var(--burnt-hover);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-serif: 'Georgia', 'Times New Roman', serif;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #1c1917;
+    --foreground: #FAF9F6;
+    --paper: #1c1917;
+    --charcoal: #FAF9F6;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Grid background for hero section */
+.grid-bg {
+  background-image:
+    linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Serif font utility */
+.font-serif {
+  font-family: 'Georgia', 'Times New Roman', serif;
 }

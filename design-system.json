@@ -1,0 +1,164 @@
+{
+  "meta": {
+    "name": "Elena Studio Design System",
+    "theme": "Dark Glassmorphism",
+    "description": "A high-contrast dark theme featuring deep black backgrounds, white transparency (glass) effects, neon purple/blue accents, and staggered entry animations."
+  },
+  "typography": {
+    "fontFamily": {
+      "primary": "'Inter', sans-serif",
+      "serif": "'IBM Plex Serif', serif",
+      "mono": "'IBM Plex Mono', monospace"
+    },
+    "weights": {
+      "light": 300,
+      "regular": 400,
+      "medium": 500,
+      "semibold": 600,
+      "bold": 700,
+      "extrabold": 800
+    },
+    "scale": {
+      "h1_hero": "clamp(40px, 8vw, 80px)",
+      "h2_section": "clamp(24px, 4vw, 36px)",
+      "h3_card": "24px",
+      "body_lg": "18px",
+      "body_base": "16px",
+      "body_sm": "14px",
+      "caption": "12px"
+    },
+    "letterSpacing": {
+      "tight": "-0.025em",
+      "tighter": "-0.05em"
+    }
+  },
+  "colors": {
+    "background": {
+      "main": "#000000",
+      "overlay": "rgba(0, 0, 0, 0.8)",
+      "card_surface": "linear-gradient(to bottom right, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.1))",
+      "card_highlight": "linear-gradient(to bottom right, rgba(147, 51, 234, 0.1), rgba(236, 72, 153, 0.1))"
+    },
+    "text": {
+      "primary": "#FFFFFF",
+      "secondary": "rgba(255, 255, 255, 0.8)",
+      "tertiary": "rgba(255, 255, 255, 0.6)",
+      "inverse": "#000000"
+    },
+    "accent": {
+      "purple": "#9333ea",
+      "purple_glow": "rgba(168, 85, 247, 0.15)",
+      "green": "#4ade80",
+      "blue_gradient_start": "#3fe9ff",
+      "blue_gradient_end": "rgba(0, 0, 255, 0.5)"
+    },
+    "border": {
+      "subtle": "rgba(255, 255, 255, 0.1)",
+      "highlight": "rgba(168, 85, 247, 0.5)"
+    }
+  },
+  "components": {
+    "buttons": {
+      "hero_primary": {
+        "text": "white",
+        "borderRadius": "16px",
+        "background": "radial-gradient(circle 80px at 80% -10%, #ffffff, #181b1b)",
+        "inner_glow": "radial-gradient(circle 60px at 0% 100%, #3fe9ff, rgba(0,0,255,0.5), transparent)",
+        "shadow": "-10px 10px 30px rgba(0, 81, 255, 0.18)",
+        "padding": "0.5rem 1rem",
+        "fontWeight": "500"
+      },
+      "card_action": {
+        "background": "#FFFFFF",
+        "text": "#000000",
+        "borderRadius": "8px",
+        "padding": "12px",
+        "width": "100%",
+        "hover": {
+          "background": "rgba(255, 255, 255, 0.9)"
+        }
+      },
+      "card_action_accent": {
+        "background": "#9333ea",
+        "text": "#FFFFFF",
+        "borderRadius": "8px",
+        "padding": "12px",
+        "width": "100%",
+        "hover": {
+          "background": "#7e22ce"
+        }
+      },
+      "badge": {
+        "background": "rgb(31, 41, 55)",
+        "text": "#FFFFFF",
+        "borderRadius": "8px",
+        "fontSize": "12px",
+        "padding": "4px 8px"
+      }
+    },
+    "cards": {
+      "glass": {
+        "background": "linear-gradient(to bottom right, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.1))",
+        "border": "1px solid rgba(255, 255, 255, 0.1)",
+        "borderRadius": "16px",
+        "padding": "32px",
+        "transition": "transform 0.2s ease, background 0.2s ease",
+        "hover": {
+          "transform": "translateY(-4px)",
+          "background": "linear-gradient(to bottom right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2))"
+        }
+      }
+    },
+    "table": {
+      "headerBorder": "1px solid rgba(255, 255, 255, 0.2)",
+      "rowBorder": "1px solid rgba(255, 255, 255, 0.1)",
+      "rowHover": "rgba(255, 255, 255, 0.1)"
+    }
+  },
+  "layout": {
+    "adaptiveSpecs": {
+      "containerMaxWidth": {
+        "md": "768px",
+        "lg": "1024px",
+        "xl": "1280px"
+      },
+      "padding": {
+        "mobile": "24px",
+        "tablet": "64px",
+        "desktop": "96px"
+      },
+      "gridGap": "32px"
+    },
+    "spacing": {
+      "section_vertical": "112px",
+      "element_vertical": "24px"
+    }
+  },
+  "assets": {
+    "iconSet": "Lucide Icons (feather style)",
+    "background_3d": "https://my.spline.design/animatedbackgroundgradientforweb-jvJDeBWjMvShkjPKxPRUswLq/",
+    "logos": {
+      "placeholder_avatars": "https://randomuser.me/api/portraits/"
+    }
+  },
+  "animations": {
+    "engine": "IntersectionObserver + CSS Transitions",
+    "instructions": "Elements should start with opacity: 0. Upon entering the viewport (threshold 0.1), opacity transitions to 1. Elements defined as 'slide-in' should also translate from Y: 20px/40px to Y: 0.",
+    "defaults": {
+      "duration": "0.8s",
+      "ease": "ease-out",
+      "staggerDelay": "0.1s"
+    },
+    "keyframes": {
+      "fadeIn": {
+        "from": { "opacity": 0 },
+        "to": { "opacity": 1 }
+      },
+      "slideUp": {
+        "from": { "transform": "translateY(40px)", "opacity": 0 },
+        "to": { "transform": "translateY(0)", "opacity": 1 }
+      }
+    },
+    "script_logic": "const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.style.opacity = '1'; entry.target.style.transform = 'translateY(0)'; } }); }, { threshold: 0.1 });"
+  }
+}

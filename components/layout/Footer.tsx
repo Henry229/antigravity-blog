@@ -4,23 +4,47 @@ const footerLinks = [
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
   { label: "Privacy Policy", href: "/privacy" },
+  { label: "Terms", href: "/terms" },
 ]
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="mt-auto w-full border-t border-gray-200/80 dark:border-gray-800/50">
-      <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-4 px-4 py-8 sm:flex-row sm:px-6 lg:px-8">
-        <p className="text-sm text-gray-500 dark:text-gray-400">
-          © {currentYear} SimpleBlog. All rights reserved.
+    <footer className="bg-[#1c1917] text-stone-300">
+      {/* Main Footer CTA */}
+      <div className="py-24 px-6 text-center border-b border-white/10">
+        <h2 className="text-3xl md:text-5xl font-serif text-white mb-6">
+          Ready to read smarter?
+        </h2>
+        <p className="max-w-xl mx-auto text-stone-400 mb-10 font-light">
+          Join the waitlist and get early access to the future of minimal blogging.
         </p>
-        <nav className="flex gap-6">
+
+        <div className="flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
+          <input
+            type="email"
+            placeholder="Enter your email"
+            className="flex-1 bg-white/5 border border-white/10 rounded-md px-4 py-3 text-sm text-white placeholder-stone-500 focus:outline-none focus:border-[#D97706] transition-colors"
+          />
+          <button className="bg-[#D97706] text-white font-medium px-6 py-3 rounded-md hover:bg-[#b45309] transition-colors">
+            Join Waitlist
+          </button>
+        </div>
+      </div>
+
+      {/* Links & Copyright */}
+      <div className="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row items-center justify-between text-xs tracking-wide uppercase text-stone-500">
+        <div className="mb-4 md:mb-0">
+          <span className="text-white font-serif font-bold mr-2">SimpleBlog</span> © {currentYear}
+        </div>
+
+        <nav className="flex items-center gap-8">
           {footerLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary"
+              className="hover:text-white transition-colors"
             >
               {link.label}
             </Link>
